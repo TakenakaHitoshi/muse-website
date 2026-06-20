@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="工場案内 | 株式会社ミューズ。高知県室戸岬町に位置する製造工場の設備をご紹介。凍結乾燥機・充填室・充填包装室・調合器具など最新設備を完備。">
+  <title>工場案内 | MUSE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── ページ固有スタイル ── */
+
+    /* 工場概要バー */
+    .factory-overview {
+      background: var(--deep-green);
+      padding: 4rem 2rem;
+    }
+    .factory-overview-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(4,1fr);
+      gap: 0;
+    }
+    .fov-item {
+      text-align: center;
+      padding: 1.5rem 1rem;
+      border-right: 1px solid rgba(255,255,255,0.1);
+    }
+    .fov-item:last-child { border-right: none; }
+    .fov-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.6rem; font-weight: 300;
+      color: var(--gold); line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    .fov-num small { font-size: 1.1rem; }
+    .fov-label { font-size: 0.68rem; letter-spacing: 0.2em; color: rgba(255,255,255,0.6); }
+
+    /* 設備ギャラリーセクション */
+    .facility-section {
+      padding: 7rem 2rem;
+    }
+    .facility-section:nth-child(even) {
+      background: var(--cream);
+    }
+    .facility-section:nth-child(odd) {
+      background: var(--white);
+    }
+
+    .facility-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: center;
+    }
+    .facility-inner.reverse { direction: rtl; }
+    .facility-inner.reverse > * { direction: ltr; }
+
+    .facility-img-wrap {
+      position: relative; overflow: hidden;
+    }
+    .facility-img-wrap img {
+      width: 100%; height: 420px;
+      object-fit: cover; display: block;
+      transition: transform 0.6s ease;
+    }
+    .facility-img-wrap:hover img {
+      transform: scale(1.03);
+    }
+    /* 設備番号バッジ */
+    .facility-badge {
+      position: absolute; top: 1.5rem; left: 1.5rem;
+      background: var(--deep-green);
+      padding: 0.5rem 1rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.75rem; font-weight: 300;
+      color: var(--gold); letter-spacing: 0.3em;
+    }
+    /* ライトボックス風オーバーレイ */
+    .facility-img-overlay {
+      position: absolute; inset: 0;
+      background: rgba(26,46,40,0.0);
+      transition: background 0.4s;
+      display: flex; align-items: center; justify-content: center;
+      cursor: zoom-in;
+    }
+    .facility-img-wrap:hover .facility-img-overlay {
+      background: rgba(26,46,40,0.2);
+    }
+    .zoom-icon {
+      opacity: 0; transition: opacity 0.4s;
+      color: white; font-size: 1.5rem; letter-spacing: 0.1em;
+      font-family: 'Cormorant Garamond', serif;
+    }
+    .facility-img-wrap:hover .zoom-icon { opacity: 1; }
+
+    /* テキスト側 */
+    .facility-text {}
+    .facility-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4rem; font-weight: 300;
+      color: var(--pale-green); line-height: 1;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.05em;
+    }
+    .facility-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 300;
+      color: var(--deep-green); letter-spacing: 0.06em;
+      margin-bottom: 1.2rem; line-height: 1.3;
+    }
+    .facility-body {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 0.9rem; line-height: 2.1;
+      color: var(--text-mid); font-weight: 300;
+      margin-bottom: 1.5rem;
+    }
+    .facility-specs { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .facility-specs li {
+      display: flex; align-items: flex-start; gap: 0.8rem;
+      font-size: 0.82rem; color: var(--text-mid);
+      font-family: 'Noto Serif JP', serif; font-weight: 300;
+      line-height: 1.7;
+    }
+    .facility-specs li::before {
+      content: '';
+      width: 20px; height: 1px;
+      background: var(--gold);
+      flex-shrink: 0; margin-top: 0.7em;
+    }
+
+    /* ライトボックス */
+    .lightbox {
+      display: none; position: fixed; inset: 0;
+      background: rgba(4,20,35,0.92);
+      z-index: 1000; align-items: center; justify-content: center;
+      padding: 2rem;
+    }
+    .lightbox.active { display: flex; }
+    .lightbox img {
+      max-width: 90vw; max-height: 85vh;
+      object-fit: contain; box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+    .lightbox-close {
+      position: absolute; top: 1.5rem; right: 1.5rem;
+      color: rgba(255,255,255,0.7); font-size: 2rem;
+      cursor: pointer; background: none; border: none;
+      line-height: 1; transition: color 0.2s;
+    }
+    .lightbox-close:hover { color: var(--gold); }
+    .lightbox-caption {
+      position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+      font-size: 0.8rem; letter-spacing: 0.2em; color: rgba(255,255,255,0.5);
+      white-space: nowrap;
+    }
+
+    /* 設備一覧テーブル */
+    .equip-table-section { background: var(--deep-green); padding: 6rem 2rem; }
+    .equip-table-inner { max-width: 900px; margin: 0 auto; }
+    .equip-table { width: 100%; border-collapse: collapse; margin-top: 2.5rem; }
+    .equip-table th {
+      padding: 1rem 1.5rem; text-align: left;
+      font-size: 0.65rem; letter-spacing: 0.25em;
+      color: var(--gold); font-weight: 400;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      white-space: nowrap;
+    }
+    .equip-table td {
+      padding: 1rem 1.5rem;
+      font-family: 'Noto Serif JP', serif;
+      font-size: 0.85rem; color: rgba(255,255,255,0.7);
+      font-weight: 300; line-height: 1.8;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .equip-table tr:last-child td { border-bottom: none; }
+    .equip-table tr:hover td { color: rgba(255,255,255,0.9); background: rgba(255,255,255,0.03); }
+
+    /* レスポンシブ */
+    @media (max-width: 900px) {
+      .facility-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .facility-inner.reverse { direction: ltr; }
+      .facility-img-wrap img { height: 280px; }
+      .factory-overview-inner { grid-template-columns: repeat(2,1fr); }
+      .fov-item:nth-child(2) { border-right: none; }
+      .equip-table th, .equip-table td { padding: 0.8rem 1rem; }
+    }
+    @media (max-width: 480px) {
+      .factory-overview-inner { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="main-nav">
+    <a href="index.html" class="nav-logo">MUSE</a>
+    <ul class="nav-links">
+      <li><a href="deep-sea-water.html">海洋深層水について</a></li>
+      <li><a href="about.html">会社について</a></li>
+      <li><a href="products.html">製造のご案内</a></li>
+      <li><a href="factory.html" style="color:var(--gold)">工場案内</a></li>
+      <li><a href="news.html">ニュース</a></li>
+      <li><a href="contact.html">お問い合わせ</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+  </nav>
+  <nav id="mobile-menu" class="nav-mobile-menu">
+    <a href="deep-sea-water.html">海洋深層水について</a>
+    <a href="about.html">会社について</a>
+    <a href="products.html">製造のご案内</a>
+    <a href="factory.html">工場案内</a>
+    <a href="news.html">ニュース</a>
+    <a href="contact.html">お問い合わせ</a>
+  </nav>
+
+  <!-- ページヒーロー -->
+  <div class="page-hero">
+    <p class="page-hero-eyebrow">FACTORY TOUR</p>
+    <h1 class="page-hero-title">工場案内</h1>
+    <p class="page-hero-sub">高知県室戸岬町　製造拠点のご紹介</p>
+    <nav class="breadcrumb"><a href="index.html">HOME</a><span>›</span><span>工場案内</span></nav>
+  </div>
+
+  <!-- 工場概要数値バー -->
+  <div class="factory-overview">
+    <div class="factory-overview-inner">
+      <div class="fov-item reveal">
+        <div class="fov-num">344<small>m</small></div>
+        <div class="fov-label">海洋深層水取水深度</div>
+      </div>
+      <div class="fov-item reveal reveal-delay-1">
+        <div class="fov-num">3<small>台</small></div>
+        <div class="fov-label">凍結乾燥機保有台数</div>
+      </div>
+      <div class="fov-item reveal reveal-delay-2">
+        <div class="fov-num">直</div>
+        <div class="fov-label">パイプライン直供給</div>
+      </div>
+      <div class="fov-item reveal reveal-delay-3">
+        <div class="fov-num">GMP</div>
+        <div class="fov-label">準拠の品質管理体制</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- イントロ -->
+  <div style="background:var(--cream);padding:5rem 2rem;">
+    <div style="max-width:780px;margin:0 auto;text-align:center;">
+      <p class="section-eyebrow reveal">FACTORY OVERVIEW</p>
+      <h2 class="section-title reveal reveal-delay-1">深海と直結した、<br>世界にも稀少な製造拠点</h2>
+      <p class="section-body reveal reveal-delay-2">
+        株式会社ミューズの製造工場は、高知県室戸市室戸岬町1828-3に位置します。室戸岬沖・水深344mから取水される海洋深層水がパイプラインで直接供給されるこの工場は、凍結乾燥機・充填室・充填包装室・調合器具など、化粧品製造に必要な設備を完備。清浄性の高い製造環境のもと、OEMパートナーとして貴社製品を高品質に製造いたします。
+      </p>
+    </div>
+  </div>
+
+  <!-- ① 凍結乾燥機 -->
+  <section class="facility-section">
+    <div class="facility-inner">
+      <div class="facility-img-wrap reveal" onclick="openLightbox('factory_freeze_dryer.jpg','凍結乾燥機（全3台）')">
+        <img src="factory_freeze_dryer.jpg" alt="ミューズ工場の凍結乾燥機（全3台）" loading="lazy">
+        <span class="facility-badge">FACILITY 01</span>
+        <div class="facility-img-overlay"><span class="zoom-icon">＋ 拡大</span></div>
+      </div>
+      <div class="facility-text reveal reveal-delay-1">
+        <div class="facility-num">01</div>
+        <h2 class="facility-title">凍結乾燥機<br><span style="font-size:1rem;letter-spacing:0.2em;color:var(--text-light);">FREEZE DRYER</span></h2>
+        <p class="facility-body">
+          凍結乾燥機（フリーズドライヤー）を3台保有しています。凍結乾燥技術は、成分の活性を低温のまま保持しながら水分を除去する高度な処理方法です。海洋深層水由来の有効成分をはじめ、不安定な美容成分を劣化させずに高濃度に凝縮・粉末化することが可能です。
+        </p>
+        <ul class="facility-specs">
+          <li>保有台数：3台（全台稼働可能）</li>
+          <li>低温下での成分活性を維持しながら乾燥処理</li>
+          <li>美容液・エキス・原料の高濃度粉末化に対応</li>
+          <li>高付加価値製品の差別化成分製造に活用</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ② 充填室全景 -->
+  <section class="facility-section">
+    <div class="facility-inner reverse">
+      <div class="facility-img-wrap reveal" onclick="openLightbox('factory_filling_room.jpg','充填室全景')">
+        <img src="factory_filling_room.jpg" alt="ミューズ工場の充填室全景" loading="lazy">
+        <span class="facility-badge">FACILITY 02</span>
+        <div class="facility-img-overlay"><span class="zoom-icon">＋ 拡大</span></div>
+      </div>
+      <div class="facility-text reveal reveal-delay-1">
+        <div class="facility-num">02</div>
+        <h2 class="facility-title">充填室<br><span style="font-size:1rem;letter-spacing:0.2em;color:var(--text-light);">FILLING ROOM</span></h2>
+        <p class="facility-body">
+          化粧品の充填を行う専用室です。ステンレス製の充填機とコンベアラインを備え、液状・クリーム状・ジェル状など幅広い剤型の充填に対応しています。異物混入を防ぐ管理された清浄環境のもと、高い精度と効率で充填作業を行います。
+        </p>
+        <ul class="facility-specs">
+          <li>液状・乳液・クリーム・ジェル等の充填に対応</li>
+          <li>ステンレス製充填機を使用（衛生管理徹底）</li>
+          <li>コンベアラインによる安定した連続充填</li>
+          <li>充填量の精度管理・全数重量確認を実施</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ③ 充填包装室 -->
+  <section class="facility-section">
+    <div class="facility-inner">
+      <div class="facility-img-wrap reveal" onclick="openLightbox('factory_packaging_room.jpg','充填包装室')">
+        <img src="factory_packaging_room.jpg" alt="ミューズ工場の充填包装室" loading="lazy">
+        <span class="facility-badge">FACILITY 03</span>
+        <div class="facility-img-overlay"><span class="zoom-icon">＋ 拡大</span></div>
+      </div>
+      <div class="facility-text reveal reveal-delay-1">
+        <div class="facility-num">03</div>
+        <h2 class="facility-title">充填包装室<br><span style="font-size:1rem;letter-spacing:0.2em;color:var(--text-light);">PACKAGING ROOM</span></h2>
+        <p class="facility-body">
+          充填後の製品にラベルを貼付し、箱詰め・梱包までを一貫して行う充填包装室です。ラベラー・シュリンク包装機・コンベアを備え、多様な容器形状・パッケージ仕様に対応しています。OEMお客様のオリジナルラベルにも対応可能です。
+        </p>
+        <ul class="facility-specs">
+          <li>自動ラベラーによるラベル貼付（多種容器対応）</li>
+          <li>シュリンク包装・カートン詰め・箱詰めまで一貫対応</li>
+          <li>コンベア搬送による効率的なライン生産</li>
+          <li>お客様オリジナルラベル・パッケージに対応</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ④ 調合・製造器具 -->
+  <section class="facility-section">
+    <div class="facility-inner reverse">
+      <div class="facility-img-wrap reveal" onclick="openLightbox('factory_equipment.jpg','調合・製造器具')">
+        <img src="factory_equipment.jpg" alt="ミューズ工場の調合・製造器具" loading="lazy">
+        <span class="facility-badge">FACILITY 04</span>
+        <div class="facility-img-overlay"><span class="zoom-icon">＋ 拡大</span></div>
+      </div>
+      <div class="facility-text reveal reveal-delay-1">
+        <div class="facility-num">04</div>
+        <h2 class="facility-title">調合・製造器具<br><span style="font-size:1rem;letter-spacing:0.2em;color:var(--text-light);">MIXING EQUIPMENT</span></h2>
+        <p class="facility-body">
+          ステンレス製のタンク・容器・配管類を豊富に備えた調合エリアです。海洋深層水をはじめとする原料を正確な処方で調合するための計量・混合機器が整っています。器具類には「洗浄済」管理が徹底されており、コンタミネーションゼロの製造環境を維持しています。
+        </p>
+        <ul class="facility-specs">
+          <li>ステンレス製タンク・容器類を多数完備</li>
+          <li>海洋深層水の直供給ラインを工場内に引き込み</li>
+          <li>処方ごとの調合・計量を厳格に管理</li>
+          <li>器具の洗浄・消毒管理を徹底（洗浄済ラベル運用）</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 主要設備一覧テーブル -->
+  <div class="equip-table-section">
+    <div class="equip-table-inner">
+      <p class="section-eyebrow reveal" style="color:var(--gold);">EQUIPMENT LIST</p>
+      <h2 class="section-title reveal reveal-delay-1" style="color:var(--white);">主要設備一覧</h2>
+      <table class="equip-table reveal reveal-delay-2">
+        <thead>
+          <tr>
+            <th>設備名</th>
+            <th>用途・特徴</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>凍結乾燥機（フリーズドライヤー）</td>
+            <td>美容成分の低温乾燥・粉末化。3台保有。</td>
+          </tr>
+          <tr>
+            <td>充填機（液状・クリーム対応）</td>
+            <td>液状・乳液・クリーム・ジェルの精密充填。</td>
+          </tr>
+          <tr>
+            <td>自動ラベラー</td>
+            <td>ボトル・チューブ等へのラベル自動貼付。</td>
+          </tr>
+          <tr>
+            <td>シュリンク包装機</td>
+            <td>製品の封印・外観保護のためのシュリンク包装。</td>
+          </tr>
+          <tr>
+            <td>ステンレス調合タンク</td>
+            <td>原料の計量・調合・混合。衛生管理徹底。</td>
+          </tr>
+          <tr>
+            <td>コンベアライン</td>
+            <td>充填〜包装〜検品の一貫搬送ライン。</td>
+          </tr>
+          <tr>
+            <td>海洋深層水直供給パイプライン</td>
+            <td>室戸岬沖344mからの取水を工場内へ直接供給。</td>
+          </tr>
+          <tr>
+            <td>精密重量計</td>
+            <td>原料・充填量の全数重量管理。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <section class="banner" style="background:#1A2E28;">
+    <h2 class="banner-title reveal">工場見学・製造についてのご相談</h2>
+    <p class="banner-sub reveal reveal-delay-1">OEM製造のご依頼・工場見学のお申し込みはお気軽にご連絡ください</p>
+    <a href="contact.html" class="banner-cta reveal reveal-delay-2">お問い合わせはこちら</a>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <a href="index.html" class="footer-logo">MUSE</a>
+          <p class="footer-desc">深海の水が育む、美しさのチカラ。<br>高知県室戸市室戸岬町1828-3<br>TEL：0887-22-2212</p>
+        </div>
+        <div class="footer-col"><h4>BRAND</h4><ul>
+          <li><a href="deep-sea-water.html">海洋深層水について</a></li>
+          <li><a href="about.html">会社について</a></li>
+        </ul></div>
+        <div class="footer-col"><h4>MANUFACTURING</h4><ul>
+          <li><a href="products.html">製造のご案内</a></li>
+          <li><a href="factory.html">工場案内</a></li>
+          <li><a href="news.html">ニュース</a></li>
+        </ul></div>
+        <div class="footer-col"><h4>SUPPORT</h4><ul>
+          <li><a href="contact.html">お問い合わせ</a></li>
+          <li><a href="faq.html">よくあるご質問</a></li>
+          <li><a href="privacy.html">プライバシーポリシー</a></li>
+        </ul></div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 MUSE CO., LTD. All rights reserved.</p>
+        <div class="social-links"><a href="#">INSTAGRAM</a><a href="#">X / TWITTER</a><a href="#">LINE</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ライトボックス -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <button class="lightbox-close" onclick="closeLightbox()" aria-label="閉じる">✕</button>
+    <img id="lightbox-img" src="" alt="">
+    <span class="lightbox-caption" id="lightbox-caption"></span>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    function openLightbox(src, caption) {
+      const lb = document.getElementById('lightbox');
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox-caption').textContent = caption;
+      lb.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox(e) {
+      if (e && e.target !== document.getElementById('lightbox') && !e.target.classList.contains('lightbox-close')) return;
+      document.getElementById('lightbox').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox({target: document.getElementById('lightbox')}); });
+  </script>
+</body>
+</html>

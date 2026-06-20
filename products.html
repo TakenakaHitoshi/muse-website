@@ -2,115 +2,254 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="製品・サービス | ミューズ。海洋深層水を配合したスキンケア・ボディケア・ヘアケアのOEM製造。">
-  <title>製品・サービス | MUSE</title>
+  <meta name="description" content="製造のご案内 | 株式会社ミューズ。海洋深層水を用いた化粧品OEM製造。スキンケア・ボディケア・ヘアケアの処方開発から納品まで一貫対応。">
+  <title>製造のご案内 | MUSE</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── OEMフロー ── */
+    .flow-section { background: var(--cream); padding: 6rem 2rem; }
+    .flow-inner { max-width: 900px; margin: 0 auto; }
+    .flow-steps { display: flex; flex-direction: column; gap: 0; margin-top: 3rem; position: relative; }
+    .flow-steps::before {
+      content: '';
+      position: absolute;
+      left: 28px; top: 0; bottom: 0;
+      width: 1px;
+      background: rgba(44,74,62,0.15);
+    }
+    .flow-step { display: grid; grid-template-columns: 56px 1fr; gap: 2rem; align-items: start; padding: 2rem 0; position: relative; }
+    .flow-step:last-child { padding-bottom: 0; }
+    .flow-step-num {
+      width: 56px; height: 56px; border-radius: 50%;
+      border: 1px solid var(--gold);
+      background: var(--cream);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem; font-weight: 300;
+      color: var(--gold); flex-shrink: 0;
+      position: relative; z-index: 1;
+    }
+    .flow-step-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem; font-weight: 400;
+      color: var(--deep-green); letter-spacing: 0.05em;
+      margin-bottom: 0.5rem; padding-top: 0.8rem;
+    }
+    .flow-step-body {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 0.87rem; line-height: 2;
+      color: var(--text-mid); font-weight: 300;
+    }
+    /* ── 対応品目テーブル ── */
+    .lineup-section { background: var(--white); padding: 6rem 2rem; }
+    .lineup-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; margin-top: 3rem; max-width: 1100px; margin-left: auto; margin-right: auto; }
+    .lineup-card { border: 1px solid rgba(44,74,62,0.12); padding: 2.5rem 2rem; background: var(--cream); transition: border-color 0.3s, transform 0.3s; }
+    .lineup-card:hover { border-color: var(--gold); transform: translateY(-4px); }
+    .lc-icon { width: 52px; height: 52px; border-radius: 50%; background: var(--pale-green); display: flex; align-items: center; justify-content: center; margin-bottom: 1.2rem; }
+    .lc-icon svg { width: 26px; height: 26px; }
+    .lc-label { font-size: 0.6rem; letter-spacing: 0.35em; color: var(--gold); margin-bottom: 0.4rem; }
+    .lc-title { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 400; color: var(--deep-green); letter-spacing: 0.08em; margin-bottom: 0.8rem; }
+    .lc-list { list-style: none; display: flex; flex-direction: column; gap: 0.35rem; }
+    .lc-list li { font-size: 0.82rem; color: var(--text-mid); padding-left: 1rem; position: relative; font-family: 'Noto Serif JP', serif; font-weight: 300; }
+    .lc-list li::before { content: '—'; position: absolute; left: 0; color: var(--gold); font-size: 0.7rem; }
+    /* ── 強み3点 ── */
+    .strength-section { background: var(--deep-green); padding: 6rem 2rem; }
+    .strength-inner { max-width: 1100px; margin: 0 auto; }
+    .strength-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; margin-top: 3rem; }
+    .strength-item { border-left: 3px solid rgba(201,169,110,0.4); padding: 0 0 0 2rem; }
+    .strength-num { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 300; color: rgba(201,169,110,0.4); line-height: 1; margin-bottom: 0.8rem; }
+    .strength-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 300; color: var(--white); letter-spacing: 0.08em; margin-bottom: 0.8rem; }
+    .strength-body { font-family: 'Noto Serif JP', serif; font-size: 0.85rem; line-height: 2; color: rgba(255,255,255,0.65); font-weight: 300; }
+    @media (max-width: 768px) {
+      .lineup-grid { grid-template-columns: 1fr; }
+      .strength-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .flow-steps::before { left: 27px; }
+    }
+  </style>
 </head>
 <body>
   <nav id="main-nav">
     <a href="index.html" class="nav-logo">MUSE</a>
     <ul class="nav-links">
-      <li><a href="deep-sea-water.html">海洋深層水について</a></li><li><a href="about.html">会社について</a></li>
-      <li><a href="products.html" style="color:var(--gold)">製品・サービス</a></li>
-      <li><a href="sustainability.html">サステナビリティ</a></li><li><a href="news.html">ニュース</a></li><li><a href="contact.html">お問い合わせ</a></li>
+      <li><a href="deep-sea-water.html">海洋深層水について</a></li>
+      <li><a href="about.html">会社について</a></li>
+      <li><a href="products.html" style="color:var(--gold)">製造のご案内</a></li>
+      <li><a href="news.html">ニュース</a></li>
+      <li><a href="contact.html">お問い合わせ</a></li>
     </ul>
     <button class="nav-hamburger" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
   </nav>
   <nav id="mobile-menu" class="nav-mobile-menu">
-    <a href="deep-sea-water.html">海洋深層水について</a><a href="about.html">会社について</a>
-    <a href="products.html">製品・サービス</a><a href="sustainability.html">サステナビリティ</a>
-    <a href="news.html">ニュース</a><a href="contact.html">お問い合わせ</a>
+    <a href="deep-sea-water.html">海洋深層水について</a>
+    <a href="about.html">会社について</a>
+    <a href="products.html">製造のご案内</a>
+    <a href="factory.html">工場案内</a>
+    <a href="news.html">ニュース</a>
+    <a href="contact.html">お問い合わせ</a>
   </nav>
 
+  <!-- ページヒーロー -->
   <div class="page-hero">
-    <p class="page-hero-eyebrow">PRODUCTS &amp; SERVICES</p>
-    <h1 class="page-hero-title">製品・サービス</h1>
-    <p class="page-hero-sub">海洋深層水が生み出す、上質なケア</p>
-    <nav class="breadcrumb"><a href="index.html">HOME</a><span>›</span><span>製品・サービス</span></nav>
+    <p class="page-hero-eyebrow">MANUFACTURING GUIDE</p>
+    <h1 class="page-hero-title">製造のご案内</h1>
+    <p class="page-hero-sub">深海水が生む、付加価値の高いOEM製造</p>
+    <nav class="breadcrumb"><a href="index.html">HOME</a><span>›</span><span>製造のご案内</span></nav>
   </div>
 
-  <div class="inner-section-wide">
-    <p class="section-eyebrow reveal" style="text-align:center;">OEM LINEUP</p>
-    <h2 class="section-title reveal reveal-delay-1" style="text-align:center;margin-bottom:0.5rem;">室戸の深海水が育む<br>3つのケアラインナップ</h2>
-    <p class="section-body reveal reveal-delay-2" style="text-align:center;max-width:600px;margin:0 auto 0;">すべての製品に室戸岬沖・水深344mの海洋深層水を配合。OEMオリジナル製品として、貴社ブランドで展開いただけます。</p>
+  <!-- イントロ -->
+  <div class="inner-section-wide" style="padding-bottom:0;">
+    <div style="text-align:center;max-width:720px;margin:0 auto;">
+      <p class="section-eyebrow reveal">OEM MANUFACTURING</p>
+      <h2 class="section-title reveal reveal-delay-1">室戸の深海水とともに、<br>貴社ブランドの製品を育てる</h2>
+      <p class="section-body reveal reveal-delay-2">
+        株式会社ミューズは、室戸岬沖・水深344mから直接供給される海洋深層水を使用した化粧品のOEM製造を専門とします。処方開発から容器選定・充填・納品まで、一貫した体制でお客様のオリジナル製品づくりをサポートします。
+      </p>
+    </div>
 
-    <div class="product-detail-grid" style="margin-top:4rem;">
-      <!-- スキンケア -->
-      <div class="product-detail-card reveal">
-        <div class="pdc-icon">
-          <svg viewBox="0 0 36 36" fill="none"><path d="M18 6C18 6 8 14 8 22C8 28 12 32 18 32C24 32 28 28 28 22C28 14 18 6 18 6Z" stroke="#2C4A3E" stroke-width="1.5" fill="none"/><path d="M18 12L18 28" stroke="#C9A96E" stroke-width="0.8"/></svg>
+    <!-- 強み3点 -->
+    <div class="strength-section" style="margin-top:4rem;border-radius:0;">
+      <div class="strength-inner">
+        <p class="section-eyebrow reveal" style="color:var(--gold);">OUR STRENGTHS</p>
+        <h2 class="section-title reveal reveal-delay-1" style="color:var(--white);">ミューズ製造の3つの強み</h2>
+        <div class="strength-grid">
+          <div class="strength-item reveal">
+            <div class="strength-num">01</div>
+            <h3 class="strength-title">世界稀少な<br>直供給製造環境</h3>
+            <p class="strength-body">水深344mの海洋深層水をパイプラインで工場へ直供給。取水から製造まで一気通貫することで、他では真似できない鮮度・清浄性・コスト優位性を実現しています。</p>
+          </div>
+          <div class="strength-item reveal reveal-delay-1">
+            <div class="strength-num">02</div>
+            <h3 class="strength-title">処方から納品まで<br>ワンストップ対応</h3>
+            <p class="strength-body">ご要望のヒアリングから処方設計・サンプル確認・容器選定・充填・ラベル貼付まで、すべて自社で対応。窓口を一本化することでスムーズな製品化を実現します。</p>
+          </div>
+          <div class="strength-item reveal reveal-delay-2">
+            <div class="strength-num">03</div>
+            <h3 class="strength-title">小ロットから<br>柔軟に対応</h3>
+            <p class="strength-body">新ブランド立ち上げや試験販売など、小ロットのご依頼にも柔軟にお応えします。ご予算やスケジュールに合わせた最適な製造プランをご提案いたします。</p>
+          </div>
         </div>
-        <p style="font-size:0.65rem;letter-spacing:0.3em;color:var(--gold);margin-bottom:0.5rem;">01 SKIN CARE</p>
-        <h3 class="pdc-title">スキンケア</h3>
-        <p class="pdc-body">植物由来の厳選成分と海洋深層水を配合した洗顔・化粧水・美容液シリーズ。肌本来のチカラを引き出し、内側から輝くような素肌美へと導きます。深海のミネラルが肌の水分バランスを整え、しっとりとしたうるおいを長時間キープします。</p>
-        <ul class="pdc-list">
-          <li>洗顔フォーム / クレンジング</li>
-          <li>化粧水（さっぱり・しっとりタイプ）</li>
-          <li>美容液 / セラム</li>
-          <li>保湿クリーム / ジェル</li>
-          <li>アイクリーム</li>
-        </ul>
-      </div>
-
-      <!-- ボディケア -->
-      <div class="product-detail-card reveal reveal-delay-1">
-        <div class="pdc-icon">
-          <svg viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="10" stroke="#2C4A3E" stroke-width="1.5"/><circle cx="18" cy="18" r="5" stroke="#C9A96E" stroke-width="0.8"/><path d="M18 4L18 8 M18 28L18 32 M4 18L8 18 M28 18L32 18" stroke="#2C4A3E" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </div>
-        <p style="font-size:0.65rem;letter-spacing:0.3em;color:var(--gold);margin-bottom:0.5rem;">02 BODY CARE</p>
-        <h3 class="pdc-title">ボディケア</h3>
-        <p class="pdc-body">全身をやさしく包む、天然アロマの香りが広がるボディケアライン。海洋深層水のミネラルが肌をすこやかに保ちます。日常に小さな贅沢を取り入れ、バスタイムを特別な時間へと変えます。</p>
-        <ul class="pdc-list">
-          <li>ボディクリーム / ローション</li>
-          <li>ボディオイル</li>
-          <li>バスソルト / バスオイル</li>
-          <li>ボディスクラブ</li>
-          <li>ハンドクリーム</li>
-        </ul>
-      </div>
-
-      <!-- ヘアケア -->
-      <div class="product-detail-card reveal reveal-delay-2">
-        <div class="pdc-icon">
-          <svg viewBox="0 0 36 36" fill="none"><rect x="10" y="6" width="16" height="24" rx="3" stroke="#2C4A3E" stroke-width="1.5"/><path d="M14 6L14 4C14 3 15 2 18 2C21 2 22 3 22 4L22 6" stroke="#2C4A3E" stroke-width="1.5" fill="none"/><path d="M14 16Q18 12 22 16" stroke="#C9A96E" stroke-width="0.8" fill="none"/></svg>
-        </div>
-        <p style="font-size:0.65rem;letter-spacing:0.3em;color:var(--gold);margin-bottom:0.5rem;">03 HAIR CARE</p>
-        <h3 class="pdc-title">ヘアケア</h3>
-        <p class="pdc-body">栄養豊富な海洋深層水のミネラルとボタニカルエキスを組み合わせ、髪を内側から補修します。艶やかでしなやかな美しい髪へと導く、プレミアムヘアケアライン。</p>
-        <ul class="pdc-list">
-          <li>シャンプー（ダメージケア / スカルプ）</li>
-          <li>コンディショナー / リンス</li>
-          <li>ヘアトリートメント / マスク</li>
-          <li>ヘアオイル / ヘアミスト</li>
-          <li>スカルプセラム</li>
-        </ul>
-      </div>
-
-      <!-- OEMサービス -->
-      <div class="product-detail-card reveal reveal-delay-3" style="background:var(--deep-green);">
-        <div class="pdc-icon" style="background:rgba(255,255,255,0.1);">
-          <svg viewBox="0 0 36 36" fill="none"><rect x="4" y="8" width="28" height="20" rx="2" stroke="#C9A96E" stroke-width="1.2"/><path d="M4 14H32" stroke="#C9A96E" stroke-width="0.8"/><path d="M12 8V5 M24 8V5" stroke="#C9A96E" stroke-width="1.2" stroke-linecap="round"/><path d="M10 20H26 M10 24H20" stroke="rgba(201,169,110,0.5)" stroke-width="0.8" stroke-linecap="round"/></svg>
-        </div>
-        <p style="font-size:0.65rem;letter-spacing:0.3em;color:var(--gold);margin-bottom:0.5rem;">OEM SERVICE</p>
-        <h3 class="pdc-title" style="color:white;">OEM製造サービス</h3>
-        <p class="pdc-body" style="color:rgba(255,255,255,0.75);">貴社のブランドコンセプトに合わせて、処方設計から容器選定・パッケージデザイン提案まで、ワンストップでご対応します。小ロットからご相談可能です。</p>
-        <ul class="pdc-list" style="margin-top:1.2rem;">
-          <li style="color:rgba(255,255,255,0.65);">処方開発・カスタマイズ</li>
-          <li style="color:rgba(255,255,255,0.65);">容器・パッケージ提案</li>
-          <li style="color:rgba(255,255,255,0.65);">小ロット製造対応</li>
-          <li style="color:rgba(255,255,255,0.65);">品質管理・安全性試験</li>
-          <li style="color:rgba(255,255,255,0.65);">薬機法申請サポート</li>
-        </ul>
-        <a href="contact.html" style="display:inline-block;margin-top:1.5rem;font-size:0.72rem;letter-spacing:0.2em;color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:2px;">相談する →</a>
       </div>
     </div>
   </div>
 
+  <!-- 対応品目 -->
+  <div class="lineup-section">
+    <div style="text-align:center;max-width:680px;margin:0 auto 0;">
+      <p class="section-eyebrow reveal">PRODUCT LINEUP</p>
+      <h2 class="section-title reveal reveal-delay-1">製造対応品目</h2>
+      <p class="section-body reveal reveal-delay-2">海洋深層水を配合したスキンケア・ボディケア・ヘアケアのOEM製造に対応しています。</p>
+    </div>
+    <div class="lineup-grid">
+
+      <div class="lineup-card reveal">
+        <div class="lc-icon">
+          <svg viewBox="0 0 36 36" fill="none"><path d="M18 6C18 6 8 14 8 22C8 28 12 32 18 32C24 32 28 28 28 22C28 14 18 6 18 6Z" stroke="#2C4A3E" stroke-width="1.5" fill="none"/><path d="M18 12L18 28" stroke="#C9A96E" stroke-width="0.8"/></svg>
+        </div>
+        <p class="lc-label">01 SKIN CARE</p>
+        <h3 class="lc-title">スキンケア</h3>
+        <ul class="lc-list">
+          <li>洗顔フォーム・クレンジング</li>
+          <li>化粧水（さっぱり・しっとり）</li>
+          <li>美容液・セラム</li>
+          <li>保湿クリーム・ジェル</li>
+          <li>アイクリーム</li>
+          <li>パック・マスク</li>
+        </ul>
+      </div>
+
+      <div class="lineup-card reveal reveal-delay-1">
+        <div class="lc-icon">
+          <svg viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="10" stroke="#2C4A3E" stroke-width="1.5"/><circle cx="18" cy="18" r="5" stroke="#C9A96E" stroke-width="0.8"/><path d="M18 4L18 8 M18 28L18 32 M4 18L8 18 M28 18L32 18" stroke="#2C4A3E" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <p class="lc-label">02 BODY CARE</p>
+        <h3 class="lc-title">ボディケア</h3>
+        <ul class="lc-list">
+          <li>ボディクリーム・ローション</li>
+          <li>ボディオイル</li>
+          <li>バスソルト・バスオイル</li>
+          <li>ボディスクラブ</li>
+          <li>ハンドクリーム</li>
+          <li>デオドラント</li>
+        </ul>
+      </div>
+
+      <div class="lineup-card reveal reveal-delay-2">
+        <div class="lc-icon">
+          <svg viewBox="0 0 36 36" fill="none"><rect x="10" y="6" width="16" height="24" rx="3" stroke="#2C4A3E" stroke-width="1.5"/><path d="M14 6L14 4C14 3 15 2 18 2C21 2 22 3 22 4L22 6" stroke="#2C4A3E" stroke-width="1.5" fill="none"/><path d="M14 16Q18 12 22 16" stroke="#C9A96E" stroke-width="0.8" fill="none"/></svg>
+        </div>
+        <p class="lc-label">03 HAIR CARE</p>
+        <h3 class="lc-title">ヘアケア</h3>
+        <ul class="lc-list">
+          <li>シャンプー（ダメージ・スカルプ）</li>
+          <li>コンディショナー・リンス</li>
+          <li>ヘアトリートメント・マスク</li>
+          <li>ヘアオイル・ヘアミスト</li>
+          <li>スカルプセラム</li>
+          <li>育毛・養毛トニック</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 製造フロー -->
+  <div class="flow-section">
+    <div class="flow-inner">
+      <p class="section-eyebrow reveal">MANUFACTURING FLOW</p>
+      <h2 class="section-title reveal reveal-delay-1">製造の流れ</h2>
+      <div class="flow-steps">
+        <div class="flow-step reveal">
+          <div class="flow-step-num">1</div>
+          <div>
+            <h3 class="flow-step-title">お問い合わせ・ご相談</h3>
+            <p class="flow-step-body">まずはお電話またはお問い合わせフォームよりご連絡ください。ご希望の製品カテゴリ・ターゲット・ご予算・ロット数などをヒアリングし、最適な製造プランをご提案します。</p>
+          </div>
+        </div>
+        <div class="flow-step reveal">
+          <div class="flow-step-num">2</div>
+          <div>
+            <h3 class="flow-step-title">処方設計・サンプル作成</h3>
+            <p class="flow-step-body">ヒアリング内容をもとに処方を設計し、サンプルを作成します。香り・テクスチャー・配合成分などはお客様のご要望に合わせてカスタマイズ可能です。</p>
+          </div>
+        </div>
+        <div class="flow-step reveal">
+          <div class="flow-step-num">3</div>
+          <div>
+            <h3 class="flow-step-title">サンプル確認・処方確定</h3>
+            <p class="flow-step-body">ご提出したサンプルをご確認いただき、必要に応じて修正を行います。処方が確定したら、品質・安全性の各種試験を実施します。</p>
+          </div>
+        </div>
+        <div class="flow-step reveal">
+          <div class="flow-step-num">4</div>
+          <div>
+            <h3 class="flow-step-title">容器・パッケージ選定</h3>
+            <p class="flow-step-body">ボトル・チューブ・ポンプ容器など豊富なラインナップからお選びいただけます。ラベルデザインのご支給も可能です。薬機法に準拠した表示内容の確認もサポートします。</p>
+          </div>
+        </div>
+        <div class="flow-step reveal">
+          <div class="flow-step-num">5</div>
+          <div>
+            <h3 class="flow-step-title">製造・充填・検品</h3>
+            <p class="flow-step-body">海洋深層水を直供給する工場内で製造・充填・ラベル貼付を行います。厳格な品質管理のもと、全数検品して出荷します。</p>
+          </div>
+        </div>
+        <div class="flow-step reveal">
+          <div class="flow-step-num">6</div>
+          <div>
+            <h3 class="flow-step-title">納品</h3>
+            <p class="flow-step-body">完成品を指定の場所へお届けします。初回から継続製造まで、長期にわたるパートナーとして安定した供給体制でご支援いたします。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTAバナー -->
   <section class="banner" style="background:#1A2E28;">
-    <h2 class="banner-title reveal">OEM製品のご相談はお気軽に</h2>
-    <p class="banner-sub reveal reveal-delay-1">小ロットから対応可能。まずはお気軽にお問い合わせください</p>
+    <h2 class="banner-title reveal">製造についてのご相談はお気軽に</h2>
+    <p class="banner-sub reveal reveal-delay-1">小ロットからご対応可能。まずはお気軽にお問い合わせください</p>
     <a href="contact.html" class="banner-cta reveal reveal-delay-2">お問い合わせはこちら</a>
   </section>
 
@@ -118,9 +257,24 @@
     <div class="footer-inner">
       <div class="footer-top">
         <div><a href="index.html" class="footer-logo">MUSE</a><p class="footer-desc">深海の水が育む、美しさのチカラ。<br>高知県室戸市室戸岬町1828-3<br>TEL：0887-22-2212</p></div>
-        <div class="footer-col"><h4>BRAND</h4><ul><li><a href="deep-sea-water.html">海洋深層水について</a></li><li><a href="about.html">会社について</a></li><li><a href="sustainability.html">サステナビリティ</a></li></ul></div>
-        <div class="footer-col"><h4>PRODUCTS</h4><ul><li><a href="products.html">スキンケア</a></li><li><a href="products.html">ボディケア</a></li><li><a href="products.html">ヘアケア</a></li><li><a href="news.html">キャンペーン</a></li></ul></div>
-        <div class="footer-col"><h4>SUPPORT</h4><ul><li><a href="contact.html">お問い合わせ</a></li><li><a href="faq.html">よくあるご質問</a></li><li><a href="contact.html">取り扱い店舗</a></li><li><a href="privacy.html">プライバシーポリシー</a></li></ul></div>
+        <div class="footer-col"><h4>BRAND</h4><ul>
+          <li><a href="deep-sea-water.html">海洋深層水について</a></li>
+          <li><a href="about.html">会社について</a></li>
+        </ul></div>
+        <div class="footer-col"><h4>MANUFACTURING</h4><ul>
+          <li><a href="products.html">製造のご案内</a>
+    <a href="factory.html">工場案内</a></li>
+      <li><a href="factory.html">工場案内</a></li>
+          <li><a href="products.html">スキンケア製造</a></li>
+          <li><a href="products.html">ボディケア製造</a></li>
+          <li><a href="products.html">ヘアケア製造</a></li>
+        </ul></div>
+        <div class="footer-col"><h4>SUPPORT</h4><ul>
+          <li><a href="contact.html">お問い合わせ</a></li>
+          <li><a href="faq.html">よくあるご質問</a></li>
+          <li><a href="news.html">ニュース</a></li>
+          <li><a href="privacy.html">プライバシーポリシー</a></li>
+        </ul></div>
       </div>
       <div class="footer-bottom"><p>© 2026 MUSE CO., LTD. All rights reserved.</p><div class="social-links"><a href="#">INSTAGRAM</a><a href="#">X / TWITTER</a><a href="#">LINE</a></div></div>
     </div>
