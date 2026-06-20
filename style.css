@@ -6,16 +6,17 @@
 }
 
 :root {
-  --deep-green: #2C4A3E;
-  --mid-green: #3D6657;
-  --pale-green: #E8EEE9;
-  --cream: #F5F0E8;
-  --gold: #C9A96E;
-  --gold-light: #E8D5B0;
-  --text-dark: #1A2E28;
-  --text-mid: #4A6358;
-  --text-light: #8AA396;
-  --white: #FFFFFF;
+  /* ── 深海ブルー系（ヒーローと統一） ── */
+  --deep-green:  #0a3d5c;   /* 旧deep-green → 深海ネイビー */
+  --mid-green:   #0d5a7a;   /* 旧mid-green  → ミッドブルー */
+  --pale-green:  #d4ecf7;   /* 旧pale-green → 浅海ブルー   */
+  --cream:       #eef6fb;   /* 旧cream      → 水面ホワイト  */
+  --gold:        #C9A96E;   /* アクセントゴールド（維持）   */
+  --gold-light:  #E8D5B0;   /* ゴールドライト（維持）       */
+  --text-dark:   #041f30;   /* 旧text-dark  → 深海ダーク    */
+  --text-mid:    #2a5a78;   /* 旧text-mid   → ミッドネイビー */
+  --text-light:  #6a9eb8;   /* 旧text-light → ライトブルー  */
+  --white:       #FFFFFF;
 }
 
 html {
@@ -103,7 +104,7 @@ nav.scrolled .nav-links a {
 }
 
 nav.scrolled .nav-hamburger span {
-  background: var(--deep-green);
+  background: #0a3d5c;
 }
 
 /* Mobile nav open state */
@@ -124,7 +125,7 @@ nav.scrolled .nav-hamburger span {
   left: 0;
   right: 0;
   bottom: 0;
-  background: var(--deep-green);
+  background: #041f30;
   z-index: 99;
   flex-direction: column;
   align-items: center;
@@ -176,7 +177,7 @@ nav.scrolled .nav-hamburger span {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(160deg, #1e3d32 0%, #2C4A3E 40%, #3D6657 100%);
+  background: linear-gradient(160deg, #041f30 0%, #0a3d5c 40%, #0d5a7a 100%);
 }
 
 .ripple-container {
@@ -379,7 +380,7 @@ section {
 }
 
 .concept-visual {
-  background: var(--deep-green);
+  background: #0a3d5c;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -492,7 +493,7 @@ section {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: var(--pale-green);
+  background: #d4ecf7;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -538,7 +539,7 @@ section {
 
 /* ========== BANNER ========== */
 .banner {
-  background: var(--deep-green);
+  background: #0a3d5c;
   padding: 5rem 2rem;
   text-align: center;
   position: relative;
@@ -591,7 +592,7 @@ section {
 
 /* ========== SUSTAINABILITY ========== */
 .sustain-wrapper {
-  background: var(--pale-green);
+  background: #d4ecf7;
 }
 
 .sustain {
@@ -639,7 +640,7 @@ section {
 .sustain-visual {
   position: relative;
   height: 400px;
-  background: var(--mid-green);
+  background: #0d4f6e;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -738,7 +739,7 @@ section {
   font-size: 0.65rem;
   letter-spacing: 0.15em;
   padding: 3px 10px;
-  background: var(--pale-green);
+  background: #d4ecf7;
   color: var(--deep-green);
   display: inline-block;
   white-space: nowrap;
@@ -861,7 +862,7 @@ footer {
 }
 
 .dsw-intro-visual {
-  background: var(--deep-green);
+  background: #0a3d5c;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -880,7 +881,7 @@ footer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0;
-  background: var(--deep-green);
+  background: #0a3d5c;
 }
 
 /* 1行目3枚、2行目2枚を中央寄せ */
@@ -907,7 +908,7 @@ footer {
 /* 2行目の2枚：右端の空きセルを深緑で埋める */
 .dsw-cards::after {
   content: '';
-  background: var(--deep-green);
+  background: #0a3d5c;
   border-bottom: 1px solid rgba(44, 74, 62, 0.12);
 }
 
@@ -1085,8 +1086,8 @@ footer {
 }
 
 /* OEM帯 */
-.about-oem {
-  background: var(--deep-green);
+.about-oem { 
+  background: #0a3d5c;
   padding: 3.5rem 4rem;
   display: flex;
   align-items: center;
@@ -1191,7 +1192,7 @@ footer {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
-  .about-oem {
+  .about-oem { 
     flex-direction: column;
     padding: 2.5rem 2rem;
     text-align: center;
@@ -1249,7 +1250,7 @@ footer {
 
 /* ========== PAGE HERO (サブページ共通) ========== */
 .page-hero {
-  background: linear-gradient(160deg, #1e3d32 0%, #2C4A3E 50%, #3D6657 100%);
+  background: linear-gradient(160deg, #041f30 0%, #0a3d5c 40%, #0d5a7a 100%);
   padding: 9rem 2rem 5rem;
   text-align: center;
   position: relative;
@@ -1279,7 +1280,7 @@ footer {
 .product-detail-card:hover { transform: translateY(-4px); }
 .product-detail-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: var(--gold); transform: scaleX(0); transition: transform 0.4s; }
 .product-detail-card:hover::after { transform: scaleX(1); }
-.pdc-icon { width: 64px; height: 64px; border-radius: 50%; background: var(--pale-green); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; }
+.pdc-icon { width: 64px; height: 64px; border-radius: 50%; background: #d4ecf7; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; }
 .pdc-icon svg { width: 30px; height: 30px; }
 .pdc-title { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 400; color: var(--deep-green); letter-spacing: 0.08em; margin-bottom: 0.8rem; }
 .pdc-body { font-family: 'Noto Serif JP', serif; font-size: 0.88rem; line-height: 2; color: var(--text-mid); font-weight: 300; }
@@ -1310,7 +1311,7 @@ footer {
 .contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus { border-color: var(--gold); }
 .contact-form textarea { resize: vertical; min-height: 140px; }
 .contact-submit { display: inline-block; padding: 0.9rem 3rem; background: var(--deep-green); color: var(--white); font-size: 0.75rem; letter-spacing: 0.25em; border: none; cursor: pointer; transition: background 0.3s; font-family: 'Noto Sans JP', sans-serif; align-self: flex-start; }
-.contact-submit:hover { background: var(--mid-green); }
+.contact-submit:hover { background: #0d4f6e; }
 
 /* ========== FAQ PAGE ========== */
 .faq-list { list-style: none; margin-top: 2rem; }
@@ -1340,4 +1341,46 @@ footer {
   .sustain-full-grid { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .news-full-item { grid-template-columns: 1fr; gap: 0.4rem; }
+}
+
+/* ── 取水システム3ステップ（モバイル） ── */
+@media (max-width: 768px) {
+  .dsw-intake-steps {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── 5大特性 レスポンシブ ── */
+@media (max-width: 768px) {
+  .dsw5-intro-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  .dsw5-item {
+    grid-template-columns: 48px 120px 1fr !important;
+  }
+  .dsw5-item > div:nth-child(3) {
+    padding: 1.5rem 1.2rem !important;
+  }
+}
+@media (max-width: 600px) {
+  .dsw5-item {
+    grid-template-columns: 1fr !important;
+  }
+  .dsw5-item > div:nth-child(1) {
+    padding: 1rem 1.5rem 0 !important;
+    border-right: none !important;
+    border-bottom: none !important;
+  }
+  .dsw5-item > div:nth-child(2) {
+    flex-direction: row !important;
+    border-right: none !important;
+    border-bottom: 1px solid rgba(44,74,62,0.08) !important;
+    padding: 1rem 1.5rem !important;
+    justify-content: flex-start !important;
+    gap: 1rem !important;
+  }
+  .dsw5-item > div:nth-child(3) {
+    padding: 1.5rem !important;
+  }
 }

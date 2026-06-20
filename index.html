@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="ミューズ | 高知県室戸岬発。海洋深層水を用いた化粧品OEM製造のパートナー。水深344mの深海から直接取水される希少な製造環境で、付加価値の高い製品を開発・製造します。">
-  <title>ミューズ | 海洋深層水化粧品 OEM製造｜高知県室戸</title>
+  <meta name="description" content="株式会社ミューズ | 高知県室戸岬発。室戸岬沖・水深344mの海洋深層水を直供給する、世界的にも稀少な化粧品OEM製造メーカー。">
+  <meta property="og:title" content="株式会社ミューズ | 海洋深層水化粧品OEM製造">
+  <meta property="og:description" content="高知県室戸岬発。水深344mの深海から直接取水される海洋深層水を用いた化粧品OEM製造。">
+  <meta property="og:type" content="website">
+  <title>株式会社ミューズ | 海洋深層水化粧品OEM製造｜高知県室戸</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@300;400&display=swap" rel="stylesheet">
@@ -12,13 +15,13 @@
 </head>
 <body>
 
+  <!-- ========== NAV ========== -->
   <nav id="main-nav" aria-label="メインナビゲーション">
     <a href="index.html" class="nav-logo">MUSE</a>
     <ul class="nav-links">
       <li><a href="deep-sea-water.html">海洋深層水について</a></li>
       <li><a href="about.html">会社について</a></li>
-      <li><a href="products.html">製造のご案内</a>
-    <a href="factory.html">工場案内</a></li>
+      <li><a href="products.html">製造のご案内</a></li>
       <li><a href="factory.html">工場案内</a></li>
       <li><a href="news.html">ニュース</a></li>
       <li><a href="contact.html">お問い合わせ</a></li>
@@ -37,152 +40,59 @@
     <a href="contact.html">お問い合わせ</a>
   </nav>
 
-  <!-- HERO -->
+  <!-- ========== HERO ========== -->
   <section class="hero" aria-label="ヒーロー">
-
-    <!-- 深海水中SVGアニメーション背景 -->
     <div class="hero-ocean" aria-hidden="true">
       <svg class="hero-ocean-svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <!-- 深海グラデーション：表層の青緑→深海の濃紺 -->
           <linearGradient id="oceanDepth" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%"   stop-color="#0a3d5c"/>
             <stop offset="30%"  stop-color="#0d4f6e"/>
             <stop offset="65%"  stop-color="#083a52"/>
             <stop offset="100%" stop-color="#041f30"/>
           </linearGradient>
-          <!-- 光条グラデーション -->
           <linearGradient id="rayGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%"  stop-color="#5bbfdf" stop-opacity="0.18"/>
+            <stop offset="0%"   stop-color="#5bbfdf" stop-opacity="0.18"/>
             <stop offset="100%" stop-color="#5bbfdf" stop-opacity="0"/>
           </linearGradient>
-          <!-- 泡グラデーション -->
           <radialGradient id="bubbleGrad" cx="35%" cy="35%" r="60%">
             <stop offset="0%"   stop-color="#a8dff0" stop-opacity="0.6"/>
             <stop offset="100%" stop-color="#4ab0cc" stop-opacity="0.1"/>
           </radialGradient>
-          <!-- 水面グロー -->
-          <filter id="glow">
-            <feGaussianBlur stdDeviation="3" result="blur"/>
-            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-          </filter>
-          <filter id="softglow">
-            <feGaussianBlur stdDeviation="8" result="blur"/>
-            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-          </filter>
+          <filter id="glow"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          <filter id="softglow"><feGaussianBlur stdDeviation="8" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
         </defs>
-
-        <!-- ベース背景 -->
         <rect width="1440" height="900" fill="url(#oceanDepth)"/>
-
-        <!-- ── 光の筋（コースティクス）── -->
         <g opacity="0.5">
-          <path d="M200 0 L140 900" stroke="url(#rayGrad)" stroke-width="60" fill="none">
-            <animateTransform attributeName="transform" type="translate" values="0,0;30,0;0,0" dur="8s" repeatCount="indefinite"/>
-          </path>
-          <path d="M480 0 L390 900" stroke="url(#rayGrad)" stroke-width="90" fill="none">
-            <animateTransform attributeName="transform" type="translate" values="0,0;-20,0;0,0" dur="11s" repeatCount="indefinite"/>
-          </path>
-          <path d="M760 0 L820 900" stroke="url(#rayGrad)" stroke-width="50" fill="none">
-            <animateTransform attributeName="transform" type="translate" values="0,0;25,0;0,0" dur="9s" repeatCount="indefinite"/>
-          </path>
-          <path d="M1050 0 L980 900" stroke="url(#rayGrad)" stroke-width="80" fill="none">
-            <animateTransform attributeName="transform" type="translate" values="0,0;-30,0;0,0" dur="13s" repeatCount="indefinite"/>
-          </path>
-          <path d="M1300 0 L1370 900" stroke="url(#rayGrad)" stroke-width="40" fill="none">
-            <animateTransform attributeName="transform" type="translate" values="0,0;15,0;0,0" dur="7s" repeatCount="indefinite"/>
-          </path>
+          <path d="M200 0 L140 900" stroke="url(#rayGrad)" stroke-width="60" fill="none"><animateTransform attributeName="transform" type="translate" values="0,0;30,0;0,0" dur="8s" repeatCount="indefinite"/></path>
+          <path d="M480 0 L390 900" stroke="url(#rayGrad)" stroke-width="90" fill="none"><animateTransform attributeName="transform" type="translate" values="0,0;-20,0;0,0" dur="11s" repeatCount="indefinite"/></path>
+          <path d="M760 0 L820 900" stroke="url(#rayGrad)" stroke-width="50" fill="none"><animateTransform attributeName="transform" type="translate" values="0,0;25,0;0,0" dur="9s" repeatCount="indefinite"/></path>
+          <path d="M1050 0 L980 900" stroke="url(#rayGrad)" stroke-width="80" fill="none"><animateTransform attributeName="transform" type="translate" values="0,0;-30,0;0,0" dur="13s" repeatCount="indefinite"/></path>
+          <path d="M1300 0 L1370 900" stroke="url(#rayGrad)" stroke-width="40" fill="none"><animateTransform attributeName="transform" type="translate" values="0,0;15,0;0,0" dur="7s" repeatCount="indefinite"/></path>
         </g>
-
-        <!-- ── コースティクスの揺らぎ模様 ── -->
         <g opacity="0.12" filter="url(#glow)">
-          <ellipse cx="360" cy="180" rx="120" ry="20" fill="none" stroke="#7dd8f0" stroke-width="1.5">
-            <animateTransform attributeName="transform" type="translate" values="0,0;15,-5;-10,3;0,0" dur="6s" repeatCount="indefinite"/>
-          </ellipse>
-          <ellipse cx="900" cy="120" rx="180" ry="15" fill="none" stroke="#7dd8f0" stroke-width="1">
-            <animateTransform attributeName="transform" type="translate" values="0,0;-20,8;10,-4;0,0" dur="8s" repeatCount="indefinite"/>
-          </ellipse>
-          <ellipse cx="1200" cy="250" rx="100" ry="12" fill="none" stroke="#7dd8f0" stroke-width="1">
-            <animateTransform attributeName="transform" type="translate" values="0,0;12,3;-8,-5;0,0" dur="7s" repeatCount="indefinite"/>
-          </ellipse>
-          <ellipse cx="600" cy="320" rx="160" ry="18" fill="none" stroke="#5bbfdf" stroke-width="0.8">
-            <animateTransform attributeName="transform" type="translate" values="0,0;-15,-6;20,4;0,0" dur="10s" repeatCount="indefinite"/>
-          </ellipse>
+          <ellipse cx="360" cy="180" rx="120" ry="20" fill="none" stroke="#7dd8f0" stroke-width="1.5"><animateTransform attributeName="transform" type="translate" values="0,0;15,-5;-10,3;0,0" dur="6s" repeatCount="indefinite"/></ellipse>
+          <ellipse cx="900" cy="120" rx="180" ry="15" fill="none" stroke="#7dd8f0" stroke-width="1"><animateTransform attributeName="transform" type="translate" values="0,0;-20,8;10,-4;0,0" dur="8s" repeatCount="indefinite"/></ellipse>
+          <ellipse cx="1200" cy="250" rx="100" ry="12" fill="none" stroke="#7dd8f0" stroke-width="1"><animateTransform attributeName="transform" type="translate" values="0,0;12,3;-8,-5;0,0" dur="7s" repeatCount="indefinite"/></ellipse>
+          <ellipse cx="600" cy="320" rx="160" ry="18" fill="none" stroke="#5bbfdf" stroke-width="0.8"><animateTransform attributeName="transform" type="translate" values="0,0;-15,-6;20,4;0,0" dur="10s" repeatCount="indefinite"/></ellipse>
         </g>
-
-        <!-- ── 水面の波紋 (上部) ── -->
         <g opacity="0.25" filter="url(#glow)">
-          <path d="M0 60 Q180 40 360 60 Q540 80 720 60 Q900 40 1080 60 Q1260 80 1440 60" fill="none" stroke="#a8e6f5" stroke-width="1.2">
-            <animate attributeName="d" values="M0 60 Q180 40 360 60 Q540 80 720 60 Q900 40 1080 60 Q1260 80 1440 60;M0 60 Q180 80 360 60 Q540 40 720 60 Q900 80 1080 60 Q1260 40 1440 60;M0 60 Q180 40 360 60 Q540 80 720 60 Q900 40 1080 60 Q1260 80 1440 60" dur="5s" repeatCount="indefinite"/>
-          </path>
-          <path d="M0 80 Q200 60 400 80 Q600 100 800 80 Q1000 60 1200 80 Q1400 100 1440 85" fill="none" stroke="#7dd8f0" stroke-width="0.8">
-            <animate attributeName="d" values="M0 80 Q200 60 400 80 Q600 100 800 80 Q1000 60 1200 80 Q1400 100 1440 85;M0 80 Q200 100 400 80 Q600 60 800 80 Q1000 100 1200 80 Q1400 60 1440 85;M0 80 Q200 60 400 80 Q600 100 800 80 Q1000 60 1200 80 Q1400 100 1440 85" dur="7s" repeatCount="indefinite"/>
-          </path>
+          <path d="M0 60 Q180 40 360 60 Q540 80 720 60 Q900 40 1080 60 Q1260 80 1440 60" fill="none" stroke="#a8e6f5" stroke-width="1.2"><animate attributeName="d" values="M0 60 Q180 40 360 60 Q540 80 720 60 Q900 40 1080 60 Q1260 80 1440 60;M0 60 Q180 80 360 60 Q540 40 720 60 Q900 80 1080 60 Q1260 40 1440 60;M0 60 Q180 40 360 60 Q540 80 720 60 Q900 40 1080 60 Q1260 80 1440 60" dur="5s" repeatCount="indefinite"/></path>
+          <path d="M0 80 Q200 60 400 80 Q600 100 800 80 Q1000 60 1200 80 Q1400 100 1440 85" fill="none" stroke="#7dd8f0" stroke-width="0.8"><animate attributeName="d" values="M0 80 Q200 60 400 80 Q600 100 800 80 Q1000 60 1200 80 Q1400 100 1440 85;M0 80 Q200 100 400 80 Q600 60 800 80 Q1000 100 1200 80 Q1400 60 1440 85;M0 80 Q200 60 400 80 Q600 100 800 80 Q1000 60 1200 80 Q1400 100 1440 85" dur="7s" repeatCount="indefinite"/></path>
         </g>
-
-        <!-- ── 泡 ── -->
         <g fill="url(#bubbleGrad)" stroke="#a8e6f5" stroke-width="0.5">
-          <!-- 泡1 -->
-          <circle cx="120" cy="750" r="6" opacity="0.5">
-            <animate attributeName="cy" values="750;-20" dur="9s" repeatCount="indefinite"/>
-            <animate attributeName="cx" values="120;135;118;130;120" dur="9s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0;0.6;0.5;0.3;0" dur="9s" repeatCount="indefinite"/>
-          </circle>
-          <!-- 泡2 -->
-          <circle cx="340" cy="820" r="4" opacity="0.4">
-            <animate attributeName="cy" values="820;-20" dur="12s" begin="2s" repeatCount="indefinite"/>
-            <animate attributeName="cx" values="340;352;335;348;340" dur="12s" begin="2s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0;0.5;0.4;0.2;0" dur="12s" begin="2s" repeatCount="indefinite"/>
-          </circle>
-          <!-- 泡3 -->
-          <circle cx="600" cy="900" r="8" opacity="0.35">
-            <animate attributeName="cy" values="900;-20" dur="14s" begin="1s" repeatCount="indefinite"/>
-            <animate attributeName="cx" values="600;618;595;610;600" dur="14s" begin="1s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0;0.5;0.35;0.15;0" dur="14s" begin="1s" repeatCount="indefinite"/>
-          </circle>
-          <!-- 泡4 -->
-          <circle cx="850" cy="780" r="3" opacity="0.55">
-            <animate attributeName="cy" values="780;-20" dur="10s" begin="4s" repeatCount="indefinite"/>
-            <animate attributeName="cx" values="850;860;843;855;850" dur="10s" begin="4s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0;0.6;0.55;0.25;0" dur="10s" begin="4s" repeatCount="indefinite"/>
-          </circle>
-          <!-- 泡5 -->
-          <circle cx="1100" cy="860" r="5" opacity="0.4">
-            <animate attributeName="cy" values="860;-20" dur="11s" begin="3s" repeatCount="indefinite"/>
-            <animate attributeName="cx" values="1100;1112;1095;1108;1100" dur="11s" begin="3s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0;0.5;0.4;0.2;0" dur="11s" begin="3s" repeatCount="indefinite"/>
-          </circle>
-          <!-- 泡6 -->
-          <circle cx="1320" cy="810" r="7" opacity="0.3">
-            <animate attributeName="cy" values="810;-20" dur="13s" begin="6s" repeatCount="indefinite"/>
-            <animate attributeName="cx" values="1320;1335;1315;1328;1320" dur="13s" begin="6s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0;0.4;0.3;0.1;0" dur="13s" begin="6s" repeatCount="indefinite"/>
-          </circle>
-          <!-- 小さな泡群 -->
-          <circle cx="220" cy="900" r="2.5" opacity="0.5">
-            <animate attributeName="cy" values="900;-20" dur="8s" begin="5s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0;0.6;0.5;0;0" dur="8s" begin="5s" repeatCount="indefinite"/>
-          </circle>
-          <circle cx="970" cy="870" r="2" opacity="0.45">
-            <animate attributeName="cy" values="870;-20" dur="7s" begin="2.5s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0;0.55;0.45;0;0" dur="7s" begin="2.5s" repeatCount="indefinite"/>
-          </circle>
+          <circle cx="120" cy="750" r="6" opacity="0.5"><animate attributeName="cy" values="750;-20" dur="9s" repeatCount="indefinite"/><animate attributeName="cx" values="120;135;118;130;120" dur="9s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.6;0.5;0.3;0" dur="9s" repeatCount="indefinite"/></circle>
+          <circle cx="340" cy="820" r="4" opacity="0.4"><animate attributeName="cy" values="820;-20" dur="12s" begin="2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.5;0.4;0.2;0" dur="12s" begin="2s" repeatCount="indefinite"/></circle>
+          <circle cx="600" cy="900" r="8" opacity="0.35"><animate attributeName="cy" values="900;-20" dur="14s" begin="1s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.5;0.35;0.15;0" dur="14s" begin="1s" repeatCount="indefinite"/></circle>
+          <circle cx="850" cy="780" r="3" opacity="0.55"><animate attributeName="cy" values="780;-20" dur="10s" begin="4s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.6;0.55;0.25;0" dur="10s" begin="4s" repeatCount="indefinite"/></circle>
+          <circle cx="1100" cy="860" r="5" opacity="0.4"><animate attributeName="cy" values="860;-20" dur="11s" begin="3s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.5;0.4;0.2;0" dur="11s" begin="3s" repeatCount="indefinite"/></circle>
+          <circle cx="1320" cy="810" r="7" opacity="0.3"><animate attributeName="cy" values="810;-20" dur="13s" begin="6s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.4;0.3;0.1;0" dur="13s" begin="6s" repeatCount="indefinite"/></circle>
         </g>
-
-        <!-- ── 深海の光の玉 (ボケ) ── -->
         <g filter="url(#softglow)" opacity="0.08">
-          <circle cx="300" cy="400" r="120" fill="#5bbfdf">
-            <animate attributeName="opacity" values="0.08;0.15;0.08" dur="6s" repeatCount="indefinite"/>
-          </circle>
-          <circle cx="1100" cy="600" r="90" fill="#4ab0cc">
-            <animate attributeName="opacity" values="0.08;0.13;0.08" dur="9s" repeatCount="indefinite"/>
-          </circle>
-          <circle cx="720" cy="200" r="150" fill="#7dd8f0">
-            <animate attributeName="opacity" values="0.06;0.12;0.06" dur="7s" repeatCount="indefinite"/>
-          </circle>
+          <circle cx="300" cy="400" r="120" fill="#5bbfdf"><animate attributeName="opacity" values="0.08;0.15;0.08" dur="6s" repeatCount="indefinite"/></circle>
+          <circle cx="1100" cy="600" r="90" fill="#4ab0cc"><animate attributeName="opacity" values="0.08;0.13;0.08" dur="9s" repeatCount="indefinite"/></circle>
+          <circle cx="720" cy="200" r="150" fill="#7dd8f0"><animate attributeName="opacity" values="0.06;0.12;0.06" dur="7s" repeatCount="indefinite"/></circle>
         </g>
-
-        <!-- ── 水深インジケーター（右端・薄く） ── -->
         <g opacity="0.12">
           <line x1="1400" y1="100" x2="1400" y2="800" stroke="#a8e6f5" stroke-width="0.5"/>
           <text x="1408" y="104" fill="#a8e6f5" font-size="9" letter-spacing="1" font-family="Georgia,serif">0m</text>
@@ -192,21 +102,18 @@
           <text x="1408" y="554" fill="#a8e6f5" font-size="9" font-family="Georgia,serif">200m</text>
           <line x1="1396" y1="750" x2="1404" y2="750" stroke="#a8e6f5" stroke-width="0.5"/>
           <text x="1408" y="754" fill="#a8e6f5" font-size="9" font-family="Georgia,serif">300m</text>
-          <!-- 取水点マーカー -->
           <circle cx="1400" cy="820" r="4" fill="none" stroke="#C9A96E" stroke-width="1"/>
           <circle cx="1400" cy="820" r="1.5" fill="#C9A96E" opacity="0.8"/>
           <text x="1410" y="824" fill="#C9A96E" font-size="9" font-family="Georgia,serif" letter-spacing="0.5">344m</text>
         </g>
-
-        <!-- ── 上部：表層の光の揺らぎ（ブライトオーバーレイ） ── -->
         <rect width="1440" height="120" fill="url(#rayGrad)" opacity="0.3"/>
       </svg>
     </div>
-
+    <div class="hero-overlay" aria-hidden="true"></div>
     <div class="hero-content">
-      <p class="hero-eyebrow">DEEP SEA BEAUTY FROM MUROTO, KOCHI</p>
+      <p class="hero-eyebrow">DEEP SEA COSMETICS OEM  ·  MUROTO, KOCHI</p>
       <h1 class="hero-title">MUSE</h1>
-      <p class="hero-subtitle">深海の水が育む、本物の美しさ</p>
+      <p class="hero-subtitle">深海344mの水が育む、化粧品OEM製造</p>
       <a href="about.html" class="hero-cta">DISCOVER MORE</a>
     </div>
     <div class="hero-scroll" aria-hidden="true">
@@ -214,40 +121,40 @@
     </div>
   </section>
 
-  <!-- 海洋深層水 ダイジェスト -->
-  <div class="concept" id="concept">
-    <div class="concept-visual reveal">
-      <div class="concept-icon">
-        <svg viewBox="0 0 80 80" fill="none" aria-hidden="true">
-          <path d="M40 10C40 10 15 30 15 50C15 64 26 72 40 72C54 72 65 64 65 50C65 30 40 10 40 10Z" stroke="#C9A96E" stroke-width="1" fill="none"/>
-          <path d="M40 20C40 20 25 38 25 52C25 62 32 68 40 68" stroke="rgba(201,169,110,0.4)" stroke-width="0.8" fill="none"/>
-          <circle cx="40" cy="10" r="3" fill="#C9A96E" opacity="0.6"/>
-        </svg>
+  <!-- ========== 海洋深層水 ダイジェスト ========== -->
+  <section style="background:var(--cream);padding:0;" id="concept">
+    <div class="concept">
+      <div class="concept-visual reveal">
+        <div class="concept-icon">
+          <svg viewBox="0 0 80 80" fill="none" aria-hidden="true">
+            <path d="M40 10C40 10 15 30 15 50C15 64 26 72 40 72C54 72 65 64 65 50C65 30 40 10 40 10Z" stroke="#C9A96E" stroke-width="1" fill="none"/>
+            <path d="M40 20C40 20 25 38 25 52C25 62 32 68 40 68" stroke="rgba(201,169,110,0.4)" stroke-width="0.8" fill="none"/>
+            <circle cx="40" cy="10" r="3" fill="#C9A96E" opacity="0.6"/>
+          </svg>
+        </div>
+      </div>
+      <div class="concept-text">
+        <p class="section-eyebrow reveal">DEEP SEA WATER</p>
+        <h2 class="section-title reveal reveal-delay-1">深海が育む、<br>本物の美しさ</h2>
+        <p class="concept-tagline reveal reveal-delay-2">"Beauty born from the depths of the ocean."</p>
+        <p class="section-body reveal reveal-delay-3">室戸岬沖・水深約344mから取水される海洋深層水は、低温安定性・富栄養性・清浄性・熟成性・ミネラル特性という5つの優れた特性を持ちます。ミューズはこの稀少な水をパイプラインで直接工場へ供給し、他にはない付加価値を貴社製品にお届けします。</p>
+        <a href="deep-sea-water.html" class="product-link" style="margin-top:1.5rem;display:inline-block;">海洋深層水の5大特性を見る →</a>
       </div>
     </div>
-    <div class="concept-text">
-      <p class="section-eyebrow reveal">DEEP SEA WATER</p>
-      <h2 class="section-title reveal reveal-delay-1">深海が育む、<br>本物の美しさ</h2>
-      <p class="concept-tagline reveal reveal-delay-2">"Beauty born from the depths of the ocean."</p>
-      <p class="section-body reveal reveal-delay-3">
-        室戸岬沖・水深約344mから取水される海洋深層水は、低温安定性・富栄養性・清浄性・熟成性・ミネラル特性という5つの優れた特性を持ちます。ミューズはこの稀少な水を化粧品製造に活かし、他にはない付加価値を貴社製品にお届けします。
-      </p>
-      <a href="deep-sea-water.html" class="product-link" style="margin-top:1.5rem;">海洋深層水の5大特性を見る →</a>
-    </div>
-  </div>
+  </section>
 
-  <!-- 会社について ダイジェスト -->
-  <section class="about" id="about">
-    <div class="about-inner">
+  <!-- ========== 会社について ダイジェスト ========== -->
+  <section class="about" id="about" style="padding:0;">
+    <div class="about-inner" style="padding:5rem 2rem;">
       <div class="about-lead reveal">
         <p class="section-eyebrow">ABOUT MUSE</p>
-        <h2 class="section-title">日本ではじめて<br>海洋深層水の取水事業を<br>開始した室戸から</h2>
+        <h2 class="section-title">日本ではじめて海洋深層水の<br>取水事業を開始した室戸から</h2>
       </div>
       <div class="about-body">
         <div class="about-text reveal reveal-delay-1">
           <p class="section-body">高知県室戸市は、日本ではじめて海洋深層水の取水事業を開始した地。私たちミューズの本社・製造工場は、その室戸岬町に位置します。工場には、室戸岬沖・<strong>水深約344m</strong>の深海から取水される海洋深層水が、取水ターミナルを通じパイプラインでダイレクトに供給されています。</p>
-          <p class="section-body" style="margin-top:1.5rem;">海洋深層水を用いた化粧品は今日多くの工場で製造されていますが、このような製造体制を持つ工場は<strong>世界的にも稀少</strong>です。安全性・鮮度・コスト面からも高い優位性を誇るこの環境で、貴社オリジナル化粧品のOEMパートナーとして、付加価値の高い製品を開発・製造いたします。</p>
-          <a href="about.html" class="product-link" style="margin-top:1.5rem;">会社詳細を見る →</a>
+          <p class="section-body" style="margin-top:1.5rem;">このような製造体制を持つ工場は<strong>世界的にも稀少</strong>。安全性・鮮度・コスト面からも高い優位性を誇るこの環境で、貴社オリジナル化粧品のOEMパートナーとして、付加価値の高い製品を開発・製造いたします。</p>
+          <a href="about.html" class="product-link" style="margin-top:1.5rem;display:inline-block;">会社詳細・企業理念を見る →</a>
         </div>
         <div class="about-features reveal reveal-delay-2">
           <div class="about-feature">
@@ -284,63 +191,65 @@
     </div>
   </section>
 
-  <!-- 製品 ダイジェスト -->
-  <section class="products" id="products">
-    <div class="products-header">
-      <p class="section-eyebrow reveal">MANUFACTURING GUIDE</p>
-      <h2 class="section-title reveal reveal-delay-1">自然の恵みを、<br>毎日の美容習慣へ</h2>
-    </div>
-    <div class="product-grid">
-      <div class="product-card reveal">
-        <div class="product-icon">
-          <svg viewBox="0 0 36 36" fill="none" aria-hidden="true">
-            <path d="M18 6C18 6 8 14 8 22C8 28 12 32 18 32C24 32 28 28 28 22C28 14 18 6 18 6Z" stroke="#2C4A3E" stroke-width="1.5" fill="none"/>
-            <path d="M18 12L18 28" stroke="#C9A96E" stroke-width="0.8"/>
-          </svg>
-        </div>
-        <h3>スキンケア</h3>
-        <p>植物由来の厳選成分を配合した洗顔・化粧水・美容液シリーズ。肌本来のチカラを引き出し、素肌美を高めます。</p>
-        <a href="products.html" class="product-link">詳しく見る →</a>
+  <!-- ========== 製造のご案内 ダイジェスト ========== -->
+  <section id="products" style="background:var(--cream);padding:6rem 2rem;">
+    <div style="max-width:1100px;margin:0 auto;">
+      <div style="text-align:center;margin-bottom:4rem;">
+        <p class="section-eyebrow reveal">MANUFACTURING GUIDE</p>
+        <h2 class="section-title reveal reveal-delay-1">室戸の深海水が育む<br>OEM製造ラインナップ</h2>
+        <p class="section-body reveal reveal-delay-2" style="max-width:580px;margin:0 auto;">すべての製品に室戸岬沖・水深344mの海洋深層水を配合。処方設計から納品まで一貫対応します。</p>
       </div>
-      <div class="product-card reveal reveal-delay-1">
-        <div class="product-icon">
-          <svg viewBox="0 0 36 36" fill="none" aria-hidden="true">
-            <circle cx="18" cy="18" r="10" stroke="#2C4A3E" stroke-width="1.5"/>
-            <circle cx="18" cy="18" r="5" stroke="#C9A96E" stroke-width="0.8"/>
-            <path d="M18 4L18 8 M18 28L18 32 M4 18L8 18 M28 18L32 18" stroke="#2C4A3E" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
+      <div class="product-grid">
+        <div class="product-card reveal">
+          <div class="product-icon">
+            <svg viewBox="0 0 36 36" fill="none" aria-hidden="true">
+              <path d="M18 6C18 6 8 14 8 22C8 28 12 32 18 32C24 32 28 28 28 22C28 14 18 6 18 6Z" stroke="#0a3d5c" stroke-width="1.5" fill="none"/>
+              <path d="M18 12L18 28" stroke="#C9A96E" stroke-width="0.8"/>
+            </svg>
+          </div>
+          <h3>スキンケア製造</h3>
+          <p>海洋深層水配合の洗顔・化粧水・美容液・クリームなど、スキンケアラインのOEM製造。</p>
+          <a href="products.html" class="product-link">詳しく見る →</a>
         </div>
-        <h3>ボディケア</h3>
-        <p>全身をやさしく包む、天然アロマのボディクリーム・オイル・バスソルト。日常に小さな贅沢を取り入れて。</p>
-        <a href="products.html" class="product-link">詳しく見る →</a>
+        <div class="product-card reveal reveal-delay-1">
+          <div class="product-icon">
+            <svg viewBox="0 0 36 36" fill="none" aria-hidden="true">
+              <circle cx="18" cy="18" r="10" stroke="#0a3d5c" stroke-width="1.5"/>
+              <circle cx="18" cy="18" r="5" stroke="#C9A96E" stroke-width="0.8"/>
+              <path d="M18 4L18 8 M18 28L18 32 M4 18L8 18 M28 18L32 18" stroke="#0a3d5c" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>ボディケア製造</h3>
+          <p>ボディクリーム・オイル・バスソルトなど、深海ミネラルを活かしたボディケアのOEM製造。</p>
+          <a href="products.html" class="product-link">詳しく見る →</a>
+        </div>
+        <div class="product-card reveal reveal-delay-2">
+          <div class="product-icon">
+            <svg viewBox="0 0 36 36" fill="none" aria-hidden="true">
+              <rect x="10" y="6" width="16" height="24" rx="3" stroke="#0a3d5c" stroke-width="1.5"/>
+              <path d="M14 6L14 4C14 3 15 2 18 2C21 2 22 3 22 4L22 6" stroke="#0a3d5c" stroke-width="1.5" fill="none"/>
+              <path d="M14 16Q18 12 22 16" stroke="#C9A96E" stroke-width="0.8" fill="none"/>
+            </svg>
+          </div>
+          <h3>ヘアケア製造</h3>
+          <p>シャンプー・トリートメント・スカルプセラムなど、ヘアケア製品のOEM製造。</p>
+          <a href="products.html" class="product-link">詳しく見る →</a>
+        </div>
       </div>
-      <div class="product-card reveal reveal-delay-2">
-        <div class="product-icon">
-          <svg viewBox="0 0 36 36" fill="none" aria-hidden="true">
-            <rect x="10" y="6" width="16" height="24" rx="3" stroke="#2C4A3E" stroke-width="1.5"/>
-            <path d="M14 6L14 4C14 3 15 2 18 2C21 2 22 3 22 4L22 6" stroke="#2C4A3E" stroke-width="1.5" fill="none"/>
-            <path d="M14 16Q18 12 22 16" stroke="#C9A96E" stroke-width="0.8" fill="none"/>
-          </svg>
-        </div>
-        <h3>ヘアケア</h3>
-        <p>栄養豊富なボタニカルエキスで髪を内側から補修。艶やかでしなやかな美しい髪へと導くシャンプー・トリートメント。</p>
-        <a href="products.html" class="product-link">詳しく見る →</a>
+      <div style="text-align:center;margin-top:3rem;">
+        <a href="factory.html" class="product-link" style="display:inline-block;">工場案内を見る →</a>
       </div>
     </div>
   </section>
 
-  <!-- キャンペーンバナー -->
-  <section class="banner" id="campaign">
-    <h2 class="banner-title reveal">春の美肌キャンペーン<br>開催中</h2>
-    <p class="banner-sub reveal reveal-delay-1">対象製品をご購入で、特別なギフトセットをプレゼント</p>
-    <a href="news.html" class="banner-cta reveal reveal-delay-2">キャンペーン詳細を見る</a>
-  </section>
-
-  <!-- ニュース ダイジェスト -->
-  <section class="news" id="news">
+  <!-- ========== ニュース ダイジェスト ========== -->
+  <section class="news" id="news" style="background:var(--white);">
     <div class="news-inner">
       <div class="news-header">
-        <div><p class="section-eyebrow reveal">NEWS &amp; TOPICS</p><h2 class="section-title reveal reveal-delay-1">最新情報</h2></div>
+        <div>
+          <p class="section-eyebrow reveal">NEWS &amp; TOPICS</p>
+          <h2 class="section-title reveal reveal-delay-1">最新情報</h2>
+        </div>
         <a href="news.html" class="news-all reveal">すべて見る →</a>
       </div>
       <ul class="news-list">
@@ -351,14 +260,24 @@
     </div>
   </section>
 
-  <!-- お問い合わせCTA -->
-  <section class="banner" id="contact" style="background: #1A2E28;">
-    <h2 class="banner-title reveal">お問い合わせ</h2>
-    <p class="banner-sub reveal reveal-delay-1">製品について、取り扱い店舗について、お気軽にご連絡ください</p>
-    <a href="contact.html" class="banner-cta reveal reveal-delay-2">お問い合わせページへ</a>
+  <!-- ========== CTA ========== -->
+  <section style="background:#041f30;padding:5rem 2rem;text-align:center;position:relative;overflow:hidden;" id="contact">
+    <!-- 水面の揺らぎ装飾 -->
+    <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.08;" viewBox="0 0 1440 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <path d="M0 100 Q360 60 720 100 Q1080 140 1440 100" fill="none" stroke="#a8e6f5" stroke-width="1">
+        <animate attributeName="d" values="M0 100 Q360 60 720 100 Q1080 140 1440 100;M0 100 Q360 140 720 100 Q1080 60 1440 100;M0 100 Q360 60 720 100 Q1080 140 1440 100" dur="6s" repeatCount="indefinite"/>
+      </path>
+      <path d="M0 150 Q360 120 720 150 Q1080 180 1440 150" fill="none" stroke="#7dd8f0" stroke-width="0.8">
+        <animate attributeName="d" values="M0 150 Q360 120 720 150 Q1080 180 1440 150;M0 150 Q360 180 720 150 Q1080 120 1440 150;M0 150 Q360 120 720 150 Q1080 180 1440 150" dur="8s" repeatCount="indefinite"/>
+      </path>
+    </svg>
+    <p class="hero-eyebrow" style="color:var(--gold);position:relative;">CONTACT</p>
+    <h2 class="banner-title reveal" style="position:relative;">OEM製造・工場見学の<br>ご相談はお気軽に</h2>
+    <p class="banner-sub reveal reveal-delay-1" style="position:relative;">株式会社ミューズ｜高知県室戸市室戸岬町1828-3｜TEL：0887-22-2212</p>
+    <a href="contact.html" class="banner-cta reveal reveal-delay-2" style="position:relative;">お問い合わせページへ</a>
   </section>
 
-  <!-- FOOTER -->
+  <!-- ========== FOOTER ========== -->
   <footer>
     <div class="footer-inner">
       <div class="footer-top">
@@ -376,10 +295,9 @@
         <div class="footer-col">
           <h4>MANUFACTURING</h4>
           <ul>
-            <li><a href="products.html">スキンケア製造</a></li>
-            <li><a href="products.html">ボディケア製造</a></li>
-            <li><a href="products.html">ヘアケア製造</a></li>
-            <li><a href="news.html">キャンペーン</a></li>
+            <li><a href="products.html">製造のご案内</a></li>
+            <li><a href="factory.html">工場案内</a></li>
+            <li><a href="news.html">ニュース</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -387,7 +305,6 @@
           <ul>
             <li><a href="contact.html">お問い合わせ</a></li>
             <li><a href="faq.html">よくあるご質問</a></li>
-            <li><a href="contact.html">取り扱い店舗</a></li>
             <li><a href="privacy.html">プライバシーポリシー</a></li>
           </ul>
         </div>

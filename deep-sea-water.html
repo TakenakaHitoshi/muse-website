@@ -14,8 +14,8 @@
     <ul class="nav-links">
       <li><a href="deep-sea-water.html" style="color:var(--gold)">海洋深層水について</a></li>
       <li><a href="about.html">会社について</a></li>
-      <li><a href="products.html">製造のご案内</a>
-    <a href="factory.html">工場案内</a></li>
+      <li><a href="products.html">製造のご案内</a></li>
+      <li><a href="factory.html">工場案内</a></li>
       <li><a href="factory.html">工場案内</a></li>
       <li><a href="news.html">ニュース</a></li>
       <li><a href="contact.html">お問い合わせ</a></li>
@@ -46,115 +46,193 @@
           海洋深層水とは、太陽光が届かない水深200m以深に存在する海水のことです。高知県室戸岬沖では水深約344mから取水されており、長い年月をかけて形成された、表層の海水とはまったく異なる優れた5つの特性を持ちます。ミューズはこの稀少な水を、パイプラインで工場へダイレクトに供給する世界的にも珍しい製造体制を誇っています。
         </p>
       </div>
-      <div class="dsw-intro-visual reveal reveal-delay-1" aria-hidden="true">
-        <svg viewBox="0 0 260 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="seaGrad2" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#3D6657" stop-opacity="0.6"/>
-              <stop offset="100%" stop-color="#1e3d32" stop-opacity="0.9"/>
-            </linearGradient>
-          </defs>
-          <rect x="0" y="0" width="260" height="320" fill="url(#seaGrad2)" rx="2"/>
-          <path d="M0 40 Q65 30 130 40 Q195 50 260 40" stroke="#C9A96E" stroke-width="0.8" fill="none" opacity="0.6"/>
-          <text x="10" y="30" fill="rgba(201,169,110,0.7)" font-size="8" letter-spacing="2">SURFACE</text>
-          <line x1="0" y1="100" x2="260" y2="100" stroke="rgba(255,255,255,0.1)" stroke-width="0.5" stroke-dasharray="4 4"/>
-          <line x1="0" y1="160" x2="260" y2="160" stroke="rgba(255,255,255,0.1)" stroke-width="0.5" stroke-dasharray="4 4"/>
-          <line x1="0" y1="220" x2="260" y2="220" stroke="rgba(255,255,255,0.1)" stroke-width="0.5" stroke-dasharray="4 4"/>
-          <text x="10" y="98" fill="rgba(255,255,255,0.25)" font-size="7">100m</text>
-          <text x="10" y="158" fill="rgba(255,255,255,0.25)" font-size="7">200m</text>
-          <text x="10" y="218" fill="rgba(255,255,255,0.25)" font-size="7">300m</text>
-          <circle cx="200" cy="280" r="6" fill="none" stroke="#C9A96E" stroke-width="1.2"/>
-          <circle cx="200" cy="280" r="2.5" fill="#C9A96E" opacity="0.8"/>
-          <line x1="200" y1="274" x2="200" y2="40" stroke="#C9A96E" stroke-width="0.6" stroke-dasharray="3 4" opacity="0.5"/>
-          <text x="210" y="283" fill="#C9A96E" font-size="9" letter-spacing="1">344m</text>
-          <path d="M30 40 C50 80 40 140 45 280" stroke="rgba(255,255,255,0.2)" stroke-width="1" fill="none"/>
-          <text x="34" y="170" fill="rgba(255,255,255,0.3)" font-size="7">9.5℃</text>
-        </svg>
+      <div class="dsw-intro-visual reveal reveal-delay-1" style="background:transparent;padding:0;overflow:hidden;">
+        <img src="dsw_diagram.jpg"
+             alt="海洋深層水取水システム概要図 — 取水口・取水管・ポンプ・配管・管理棟への経路を示す断面図"
+             style="width:100%;height:100%;object-fit:cover;display:block;">
       </div>
     </div>
 
-    <!-- 5大特性カード -->
-    <div class="dsw-cards">
-      <div class="dsw-card reveal">
-        <div class="dsw-card-head">
-          <div class="dsw-num">01</div>
-          <div class="dsw-card-icon" aria-hidden="true">
-            <svg viewBox="0 0 44 44" fill="none"><circle cx="22" cy="22" r="20" stroke="#C9A96E" stroke-width="0.8" opacity="0.4"/>
-            <rect x="19" y="6" width="6" height="22" rx="3" stroke="#C9A96E" stroke-width="1.2" fill="none"/>
-            <circle cx="22" cy="32" r="5" stroke="#C9A96E" stroke-width="1.2" fill="none"/>
-            <line x1="22" y1="20" x2="22" y2="28" stroke="#C9A96E" stroke-width="1.5" stroke-linecap="round"/>
-            <path d="M10 14L14 14 M10 14L12 12 M10 14L12 16" stroke="rgba(201,169,110,0.5)" stroke-width="0.8" stroke-linecap="round"/></svg>
+    <!-- 取水システム解説 -->
+    <div style="background:#0a3d5c;padding:4rem 2rem;">
+      <div style="max-width:1000px;margin:0 auto;">
+        <p class="section-eyebrow reveal" style="color:var(--gold);">WATER INTAKE SYSTEM</p>
+        <h3 class="section-title reveal reveal-delay-1" style="color:var(--white);margin-bottom:2.5rem;">取水システムの概要</h3>
+        <div class="reveal reveal-delay-2 dsw-intake-steps" style="display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;">
+          <div style="border-left:3px solid rgba(201,169,110,0.4);padding:0 0 0 1.5rem;">
+            <p style="font-size:0.6rem;letter-spacing:0.35em;color:var(--gold);margin-bottom:0.6rem;">STEP 01</p>
+            <h4 style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:300;color:var(--white);margin-bottom:0.6rem;">取水口・取水管</h4>
+            <p style="font-family:'Noto Serif JP',serif;font-size:0.82rem;line-height:2;color:rgba(255,255,255,0.65);font-weight:300;">室戸岬沖の水深約344mに設置された取水口から、海底に沿って敷設された取水管で海洋深層水を引き上げます。</p>
+          </div>
+          <div style="border-left:3px solid rgba(201,169,110,0.4);padding:0 0 0 1.5rem;">
+            <p style="font-size:0.6rem;letter-spacing:0.35em;color:var(--gold);margin-bottom:0.6rem;">STEP 02</p>
+            <h4 style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:300;color:var(--white);margin-bottom:0.6rem;">ポンプピット・ポンプ</h4>
+            <p style="font-family:'Noto Serif JP',serif;font-size:0.82rem;line-height:2;color:rgba(255,255,255,0.65);font-weight:300;">護岸付近のポンプピット内に設置されたポンプとストレーナーで、深海水を地上へ安定的に汲み上げます。</p>
+          </div>
+          <div style="border-left:3px solid rgba(201,169,110,0.4);padding:0 0 0 1.5rem;">
+            <p style="font-size:0.6rem;letter-spacing:0.35em;color:var(--gold);margin-bottom:0.6rem;">STEP 03</p>
+            <h4 style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:300;color:var(--white);margin-bottom:0.6rem;">配管→管理棟・工場へ</h4>
+            <p style="font-family:'Noto Serif JP',serif;font-size:0.82rem;line-height:2;color:rgba(255,255,255,0.65);font-weight:300;">汲み上げた海洋深層水は配管を通じて管理棟・製造工場へダイレクトに供給。鮮度・清浄性を保ったまま製品原料として活用されます。</p>
           </div>
         </div>
-        <h3 class="dsw-card-title">低温安定性</h3>
-        <p class="dsw-card-body">取水口付近の水温は年間を通して約<strong>9.5℃</strong>、汲み上げた段階では11〜12℃です。年間16〜26℃の室戸岬沖沿岸の表層水と比較し、かなり低い温度で安定しています。この低温安定性は、化粧品に配合した際の成分の安定性・鮮度保持に大きく貢献します。</p>
-        <div class="dsw-card-data"><span class="dsw-data-val">9.5℃</span><span class="dsw-data-lbl">年間安定水温</span></div>
-      </div>
-      <div class="dsw-card reveal reveal-delay-1">
-        <div class="dsw-card-head">
-          <div class="dsw-num">02</div>
-          <div class="dsw-card-icon" aria-hidden="true">
-            <svg viewBox="0 0 44 44" fill="none"><circle cx="22" cy="22" r="20" stroke="#C9A96E" stroke-width="0.8" opacity="0.4"/>
-            <path d="M22 8C22 8 10 18 10 28C10 35 15 39 22 39C29 39 34 35 34 28C34 18 22 8 22 8Z" stroke="#C9A96E" stroke-width="1.2" fill="none"/>
-            <path d="M22 14C22 14 16 22 16 29C16 33 19 36 22 36" stroke="rgba(201,169,110,0.4)" stroke-width="0.8" fill="none"/>
-            <circle cx="22" cy="8" r="2" fill="#C9A96E" opacity="0.7"/></svg>
-          </div>
-        </div>
-        <h3 class="dsw-card-title">富栄養性</h3>
-        <p class="dsw-card-body">植物の成長に必要な窒素やリン、ケイ酸などの無機栄養塩に富んでいます。室戸岬沿岸の表層水と比較し、<strong>10〜30倍</strong>の濃度があります。化粧品原料としての栄養価の高さが、肌への効果に直結します。</p>
-        <div class="dsw-card-data"><span class="dsw-data-val">10–30<small>倍</small></span><span class="dsw-data-lbl">表層水比・無機栄養塩濃度</span></div>
-      </div>
-      <div class="dsw-card reveal reveal-delay-2">
-        <div class="dsw-card-head">
-          <div class="dsw-num">03</div>
-          <div class="dsw-card-icon" aria-hidden="true">
-            <svg viewBox="0 0 44 44" fill="none"><circle cx="22" cy="22" r="20" stroke="#C9A96E" stroke-width="0.8" opacity="0.4"/>
-            <path d="M22 8C22 8 12 18 12 26C12 32 16 36 22 36C28 36 32 32 32 26C32 18 22 8 22 8Z" stroke="#C9A96E" stroke-width="1.2" fill="none"/>
-            <path d="M17 24L20 27L27 20" stroke="#C9A96E" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-        </div>
-        <h3 class="dsw-card-title">清浄性</h3>
-        <p class="dsw-card-body">陸水由来の大腸菌や一般細菌に汚染されておらず、海洋性細菌数も表層の海水に比べて非常に少ない。陸水や大気からの化学物質による汚染に晒される機会も少ない、美しい水です。化粧品への高い安全性をもたらします。</p>
-        <div class="dsw-card-data"><span class="dsw-data-val">極少</span><span class="dsw-data-lbl">海洋性細菌数（表層比）</span></div>
-      </div>
-      <div class="dsw-card reveal">
-        <div class="dsw-card-head">
-          <div class="dsw-num">04</div>
-          <div class="dsw-card-icon" aria-hidden="true">
-            <svg viewBox="0 0 44 44" fill="none"><circle cx="22" cy="22" r="20" stroke="#C9A96E" stroke-width="0.8" opacity="0.4"/>
-            <circle cx="22" cy="22" r="12" stroke="#C9A96E" stroke-width="1.2" fill="none"/>
-            <line x1="22" y1="22" x2="22" y2="13" stroke="#C9A96E" stroke-width="1.2" stroke-linecap="round"/>
-            <line x1="22" y1="22" x2="27" y2="26" stroke="#C9A96E" stroke-width="1" stroke-linecap="round"/>
-            <circle cx="22" cy="22" r="1.5" fill="#C9A96E"/></svg>
-          </div>
-        </div>
-        <h3 class="dsw-card-title">熟成性</h3>
-        <p class="dsw-card-body">水圧<strong>30気圧</strong>下で長い年月をかけて形成された海水ですので、性質が安定しています。時間をかけて熟成された水ならではの、安定した品質が特長です。化粧品製造時の品質安定性にも寄与します。</p>
-        <div class="dsw-card-data"><span class="dsw-data-val">30<small>気圧</small></span><span class="dsw-data-lbl">形成時の水圧</span></div>
-      </div>
-      <div class="dsw-card reveal reveal-delay-1">
-        <div class="dsw-card-head">
-          <div class="dsw-num">05</div>
-          <div class="dsw-card-icon" aria-hidden="true">
-            <svg viewBox="0 0 44 44" fill="none"><circle cx="22" cy="22" r="20" stroke="#C9A96E" stroke-width="0.8" opacity="0.4"/>
-            <path d="M22 10L30 15L30 25L22 30L14 25L14 15Z" stroke="#C9A96E" stroke-width="1.2" fill="none"/>
-            <circle cx="22" cy="20" r="2" fill="#C9A96E" opacity="0.6"/>
-            <line x1="22" y1="10" x2="22" y2="20" stroke="rgba(201,169,110,0.4)" stroke-width="0.7"/>
-            <line x1="30" y1="15" x2="22" y2="20" stroke="rgba(201,169,110,0.4)" stroke-width="0.7"/>
-            <line x1="30" y1="25" x2="22" y2="20" stroke="rgba(201,169,110,0.4)" stroke-width="0.7"/>
-            <line x1="14" y1="25" x2="22" y2="20" stroke="rgba(201,169,110,0.4)" stroke-width="0.7"/>
-            <line x1="14" y1="15" x2="22" y2="20" stroke="rgba(201,169,110,0.4)" stroke-width="0.7"/></svg>
-          </div>
-        </div>
-        <h3 class="dsw-card-title">ミネラル特性</h3>
-        <p class="dsw-card-body">海水には必須微量元素や様々なミネラルがバランスよく含まれ、海洋深層水特有の溶存状態にある元素も明らかにされつつあります。肌に必要なミネラルを豊富に含み、美容効果への期待が高まっています。</p>
-        <div class="dsw-card-data"><span class="dsw-data-val">豊富</span><span class="dsw-data-lbl">必須微量元素・ミネラル</span></div>
       </div>
     </div>
+
+    <!-- ====== 5大特性 ====== -->
+    <!-- 導入：画像＋見出し -->
+    <div style="background:var(--white);padding:6rem 2rem 0;">
+      <div style="max-width:1100px;margin:0 auto;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;" class="dsw5-intro-grid">
+          <div class="reveal">
+            <p class="section-eyebrow">5 CHARACTERISTICS</p>
+            <h2 class="section-title">海洋深層水が持つ<br>5つの特性</h2>
+            <p class="section-body">室戸岬沖・水深344mから取水される海洋深層水は、表層の海水とはまったく異なる5つの優れた特性を持ちます。これらの特性がミューズの化粧品に高い付加価値をもたらします。</p>
+          </div>
+          <div class="reveal reveal-delay-1" style="text-align:center;">
+            <img src="dsw_5features.png"
+                 alt="美しい肌をつくる海洋深層水の5大特性：ミネラル特性・清浄性・高栄養性・熟成性・低温安定性"
+                 style="width:100%;max-width:480px;display:inline-block;">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5つの特性 詳細 -->
+    <div style="background:var(--white);padding:3rem 2rem 6rem;">
+      <div style="max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:0;" class="dsw5-list">
+
+        <!-- 01 低温安定性 -->
+        <div class="dsw5-item reveal" style="display:grid;grid-template-columns:72px 180px 1fr;gap:0;align-items:stretch;border-bottom:1px solid rgba(44,74,62,0.1);">
+          <div style="display:flex;align-items:center;justify-content:center;padding:2.5rem 1rem;border-right:1px solid rgba(44,74,62,0.08);">
+            <span style="font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:300;color:var(--gold-light);line-height:1;">01</span>
+          </div>
+          <div style="background:linear-gradient(135deg,#e8f4f8,#d4ecf7);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2.5rem 1.5rem;gap:0.8rem;border-right:1px solid rgba(44,74,62,0.08);">
+            <svg viewBox="0 0 56 56" fill="none" width="52" height="52" aria-hidden="true">
+              <circle cx="28" cy="28" r="26" fill="rgba(255,255,255,0.6)" stroke="#0d7fa5" stroke-width="1"/>
+              <rect x="24" y="8" width="8" height="26" rx="4" stroke="#0d7fa5" stroke-width="1.5" fill="none"/>
+              <circle cx="28" cy="40" r="6" stroke="#0d7fa5" stroke-width="1.5" fill="rgba(13,127,165,0.15)"/>
+              <line x1="28" y1="26" x2="28" y2="35" stroke="#0d7fa5" stroke-width="2" stroke-linecap="round"/>
+              <path d="M14 18L18 18 M14 18L16 16 M14 18L16 20" stroke="#0d7fa5" stroke-width="1.2" stroke-linecap="round"/>
+              <path d="M14 22L17 22" stroke="#0d7fa5" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
+            </svg>
+            <p style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:400;color:#0a5a7a;text-align:center;letter-spacing:0.05em;line-height:1.3;">低温<br>安定性</p>
+          </div>
+          <div style="padding:2.5rem 2.5rem;">
+            <div style="display:flex;align-items:baseline;gap:1rem;margin-bottom:0.8rem;flex-wrap:wrap;">
+              <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:400;color:#0a3d5c;letter-spacing:0.05em;">低温安定性</h3>
+              <span style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;color:var(--gold);line-height:1;">9.5℃</span>
+              <span style="font-size:0.68rem;color:var(--text-light);letter-spacing:0.15em;">年間安定水温</span>
+            </div>
+            <p style="font-family:'Noto Serif JP',serif;font-size:0.88rem;line-height:2.1;color:var(--text-mid);font-weight:300;">取水口付近の水温は年間を通して約<strong style="color:#0a3d5c;font-weight:500;">9.5℃</strong>、汲み上げた段階では11〜12℃です。年間16〜26℃の室戸岬沖沿岸の表層水と比較し、かなり低い温度で安定しています。この低温安定性は、化粧品に配合した際の成分の安定性・鮮度保持に大きく貢献します。</p>
+          </div>
+        </div>
+
+        <!-- 02 富栄養性 -->
+        <div class="dsw5-item reveal" style="display:grid;grid-template-columns:72px 180px 1fr;gap:0;align-items:stretch;border-bottom:1px solid rgba(44,74,62,0.1);">
+          <div style="display:flex;align-items:center;justify-content:center;padding:2.5rem 1rem;border-right:1px solid rgba(44,74,62,0.08);">
+            <span style="font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:300;color:var(--gold-light);line-height:1;">02</span>
+          </div>
+          <div style="background:linear-gradient(135deg,#e0f5ec,#c8eedd);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2.5rem 1.5rem;gap:0.8rem;border-right:1px solid rgba(44,74,62,0.08);">
+            <svg viewBox="0 0 56 56" fill="none" width="52" height="52" aria-hidden="true">
+              <circle cx="28" cy="28" r="26" fill="rgba(255,255,255,0.6)" stroke="#1a7a4f" stroke-width="1"/>
+              <path d="M28 10C28 10 14 22 14 34C14 43 20 48 28 48C36 48 42 43 42 34C42 22 28 10 28 10Z" stroke="#1a7a4f" stroke-width="1.5" fill="rgba(26,122,79,0.1)"/>
+              <path d="M28 18C28 18 20 28 20 35C20 40 23 44 28 44" stroke="#1a7a4f" stroke-width="1" fill="none" opacity="0.5"/>
+              <circle cx="28" cy="10" r="2.5" fill="#1a7a4f" opacity="0.7"/>
+            </svg>
+            <p style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:400;color:#0f5c34;text-align:center;letter-spacing:0.05em;line-height:1.3;">富栄養性</p>
+          </div>
+          <div style="padding:2.5rem 2.5rem;">
+            <div style="display:flex;align-items:baseline;gap:1rem;margin-bottom:0.8rem;flex-wrap:wrap;">
+              <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:400;color:#0a3d5c;letter-spacing:0.05em;">富栄養性</h3>
+              <span style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;color:var(--gold);line-height:1;">10–30<small style="font-size:1rem;">倍</small></span>
+              <span style="font-size:0.68rem;color:var(--text-light);letter-spacing:0.15em;">表層水比・無機栄養塩濃度</span>
+            </div>
+            <p style="font-family:'Noto Serif JP',serif;font-size:0.88rem;line-height:2.1;color:var(--text-mid);font-weight:300;">植物の成長に必要な窒素やリン、ケイ酸などの無機栄養塩に富んでいます。室戸岬沿岸の表層水と比較し、<strong style="color:#0a3d5c;font-weight:500;">10〜30倍</strong>の濃度があります。化粧品原料としての栄養価の高さが、肌への効果に直結します。</p>
+          </div>
+        </div>
+
+        <!-- 03 清浄性 -->
+        <div class="dsw5-item reveal" style="display:grid;grid-template-columns:72px 180px 1fr;gap:0;align-items:stretch;border-bottom:1px solid rgba(44,74,62,0.1);">
+          <div style="display:flex;align-items:center;justify-content:center;padding:2.5rem 1rem;border-right:1px solid rgba(44,74,62,0.08);">
+            <span style="font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:300;color:var(--gold-light);line-height:1;">03</span>
+          </div>
+          <div style="background:linear-gradient(135deg,#e8f0fb,#d0e2f8);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2.5rem 1.5rem;gap:0.8rem;border-right:1px solid rgba(44,74,62,0.08);">
+            <svg viewBox="0 0 56 56" fill="none" width="52" height="52" aria-hidden="true">
+              <circle cx="28" cy="28" r="26" fill="rgba(255,255,255,0.6)" stroke="#1e5faa" stroke-width="1"/>
+              <path d="M28 10C28 10 16 22 16 32C16 40 21 46 28 46C35 46 40 40 40 32C40 22 28 10 28 10Z" stroke="#1e5faa" stroke-width="1.5" fill="rgba(30,95,170,0.1)"/>
+              <path d="M21 30L25 34L35 24" stroke="#1e5faa" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <p style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:400;color:#14407a;text-align:center;letter-spacing:0.05em;line-height:1.3;">清浄性</p>
+          </div>
+          <div style="padding:2.5rem 2.5rem;">
+            <div style="display:flex;align-items:baseline;gap:1rem;margin-bottom:0.8rem;flex-wrap:wrap;">
+              <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:400;color:#0a3d5c;letter-spacing:0.05em;">清浄性</h3>
+              <span style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;color:var(--gold);line-height:1;">極少</span>
+              <span style="font-size:0.68rem;color:var(--text-light);letter-spacing:0.15em;">海洋性細菌数（表層比）</span>
+            </div>
+            <p style="font-family:'Noto Serif JP',serif;font-size:0.88rem;line-height:2.1;color:var(--text-mid);font-weight:300;">陸水由来の大腸菌や一般細菌に汚染されておらず、海洋性細菌数も表層の海水に比べて非常に少ない。陸水や大気からの化学物質による汚染に晒される機会も少ない、美しい水です。化粧品への高い安全性をもたらします。</p>
+          </div>
+        </div>
+
+        <!-- 04 熟成性 -->
+        <div class="dsw5-item reveal" style="display:grid;grid-template-columns:72px 180px 1fr;gap:0;align-items:stretch;border-bottom:1px solid rgba(44,74,62,0.1);">
+          <div style="display:flex;align-items:center;justify-content:center;padding:2.5rem 1rem;border-right:1px solid rgba(44,74,62,0.08);">
+            <span style="font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:300;color:var(--gold-light);line-height:1;">04</span>
+          </div>
+          <div style="background:linear-gradient(135deg,#f5eef8,#e8d5f5);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2.5rem 1.5rem;gap:0.8rem;border-right:1px solid rgba(44,74,62,0.08);">
+            <svg viewBox="0 0 56 56" fill="none" width="52" height="52" aria-hidden="true">
+              <circle cx="28" cy="28" r="26" fill="rgba(255,255,255,0.6)" stroke="#7a3fa5" stroke-width="1"/>
+              <circle cx="28" cy="28" r="14" stroke="#7a3fa5" stroke-width="1.5" fill="rgba(122,63,165,0.08)"/>
+              <line x1="28" y1="28" x2="28" y2="17" stroke="#7a3fa5" stroke-width="1.8" stroke-linecap="round"/>
+              <line x1="28" y1="28" x2="35" y2="33" stroke="#7a3fa5" stroke-width="1.4" stroke-linecap="round"/>
+              <circle cx="28" cy="28" r="2" fill="#7a3fa5"/>
+            </svg>
+            <p style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:400;color:#5a2a80;text-align:center;letter-spacing:0.05em;line-height:1.3;">熟成性</p>
+          </div>
+          <div style="padding:2.5rem 2.5rem;">
+            <div style="display:flex;align-items:baseline;gap:1rem;margin-bottom:0.8rem;flex-wrap:wrap;">
+              <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:400;color:#0a3d5c;letter-spacing:0.05em;">熟成性</h3>
+              <span style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;color:var(--gold);line-height:1;">30<small style="font-size:1rem;">気圧</small></span>
+              <span style="font-size:0.68rem;color:var(--text-light);letter-spacing:0.15em;">形成時の水圧</span>
+            </div>
+            <p style="font-family:'Noto Serif JP',serif;font-size:0.88rem;line-height:2.1;color:var(--text-mid);font-weight:300;">水圧<strong style="color:#0a3d5c;font-weight:500;">30気圧</strong>下で長い年月をかけて形成された海水ですので、性質が安定しています。時間をかけて熟成された水ならではの、安定した品質が特長です。化粧品製造時の品質安定性にも寄与します。</p>
+          </div>
+        </div>
+
+        <!-- 05 ミネラル特性 -->
+        <div class="dsw5-item reveal" style="display:grid;grid-template-columns:72px 180px 1fr;gap:0;align-items:stretch;">
+          <div style="display:flex;align-items:center;justify-content:center;padding:2.5rem 1rem;border-right:1px solid rgba(44,74,62,0.08);">
+            <span style="font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:300;color:var(--gold-light);line-height:1;">05</span>
+          </div>
+          <div style="background:linear-gradient(135deg,#fef5e4,#fde8c0);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2.5rem 1.5rem;gap:0.8rem;border-right:1px solid rgba(44,74,62,0.08);">
+            <svg viewBox="0 0 56 56" fill="none" width="52" height="52" aria-hidden="true">
+              <circle cx="28" cy="28" r="26" fill="rgba(255,255,255,0.6)" stroke="#a0680a" stroke-width="1"/>
+              <path d="M28 12L34 18L34 28L28 34L22 28L22 18Z" stroke="#a0680a" stroke-width="1.5" fill="rgba(160,104,10,0.1)"/>
+              <circle cx="28" cy="23" r="2.5" fill="#a0680a" opacity="0.7"/>
+              <line x1="28" y1="12" x2="28" y2="23" stroke="rgba(160,104,10,0.4)" stroke-width="0.8"/>
+              <line x1="34" y1="18" x2="28" y2="23" stroke="rgba(160,104,10,0.4)" stroke-width="0.8"/>
+              <line x1="34" y1="28" x2="28" y2="23" stroke="rgba(160,104,10,0.4)" stroke-width="0.8"/>
+              <line x1="22" y1="28" x2="28" y2="23" stroke="rgba(160,104,10,0.4)" stroke-width="0.8"/>
+              <line x1="22" y1="18" x2="28" y2="23" stroke="rgba(160,104,10,0.4)" stroke-width="0.8"/>
+            </svg>
+            <p style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:400;color:#7a4e08;text-align:center;letter-spacing:0.05em;line-height:1.3;">ミネラル<br>特性</p>
+          </div>
+          <div style="padding:2.5rem 2.5rem;">
+            <div style="display:flex;align-items:baseline;gap:1rem;margin-bottom:0.8rem;flex-wrap:wrap;">
+              <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:400;color:#0a3d5c;letter-spacing:0.05em;">ミネラル特性</h3>
+              <span style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;color:var(--gold);line-height:1;">豊富</span>
+              <span style="font-size:0.68rem;color:var(--text-light);letter-spacing:0.15em;">必須微量元素・ミネラル</span>
+            </div>
+            <p style="font-family:'Noto Serif JP',serif;font-size:0.88rem;line-height:2.1;color:var(--text-mid);font-weight:300;">海水には必須微量元素や様々なミネラルがバランスよく含まれ、海洋深層水特有の溶存状態にある元素も明らかにされつつあります。肌に必要なミネラルを豊富に含み、美容効果への期待が高まっています。</p>
+          </div>
+        </div>
+
+      </div><!-- /dsw5-list -->
+    </div><!-- /白背景 -->
   </section>
 
   <!-- OEM CTA -->
-  <section class="banner" style="background:#1A2E28;">
+  <section class="banner" style="background:#041f30;">
     <h2 class="banner-title reveal">海洋深層水を活かした<br>化粧品OEMのご相談</h2>
     <p class="banner-sub reveal reveal-delay-1">室戸の深海水を用いた付加価値製品の開発・製造をお手伝いします</p>
     <a href="contact.html" class="banner-cta reveal reveal-delay-2">お問い合わせはこちら</a>
