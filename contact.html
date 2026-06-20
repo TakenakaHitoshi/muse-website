@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お問い合わせ | MUSE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav id="main-nav">
+    <a href="index.html" class="nav-logo">MUSE</a>
+    <ul class="nav-links">
+      <li><a href="deep-sea-water.html">海洋深層水について</a></li><li><a href="about.html">会社について</a></li>
+      <li><a href="products.html">製品・サービス</a></li><li><a href="sustainability.html">サステナビリティ</a></li>
+      <li><a href="news.html">ニュース</a></li><li><a href="contact.html" style="color:var(--gold)">お問い合わせ</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+  </nav>
+  <nav id="mobile-menu" class="nav-mobile-menu">
+    <a href="deep-sea-water.html">海洋深層水について</a><a href="about.html">会社について</a>
+    <a href="products.html">製品・サービス</a><a href="sustainability.html">サステナビリティ</a>
+    <a href="news.html">ニュース</a><a href="contact.html">お問い合わせ</a>
+  </nav>
+
+  <div class="page-hero">
+    <p class="page-hero-eyebrow">CONTACT</p>
+    <h1 class="page-hero-title">お問い合わせ</h1>
+    <p class="page-hero-sub">製品・OEMについてお気軽にご相談ください</p>
+    <nav class="breadcrumb"><a href="index.html">HOME</a><span>›</span><span>お問い合わせ</span></nav>
+  </div>
+
+  <div class="inner-section">
+    <div class="contact-grid">
+      <!-- 会社情報 -->
+      <div class="contact-info reveal">
+        <h3>お問い合わせ先</h3>
+        <div class="contact-info-item"><span class="ci-label">社名</span><span class="ci-value">株式会社ミューズ（MUSE CO., LTD.）</span></div>
+        <div class="contact-info-item">
+          <span class="ci-label">本社所在地</span>
+          <span class="ci-value">〒781-7101<br>高知県室戸市室戸岬町1828-3<br>TEL：0887-22-2212　FAX：0887-22-2270</span>
+        </div>
+        <div class="contact-info-item">
+          <span class="ci-label">東京オフィス</span>
+          <span class="ci-value">〒103-0028<br>東京都中央区八重洲1-8-17<br>新槇町ビル6F<br>TEL：03-5542-1897</span>
+        </div>
+        <div class="contact-info-item"><span class="ci-label">メール</span><span class="ci-value">info@muse-beauty.jp</span></div>
+        <div class="contact-info-item"><span class="ci-label">営業時間</span><span class="ci-value">平日 9:00〜17:00<br>（土日祝・年末年始を除く）</span></div>
+        <div style="margin-top:2rem;padding:1.5rem;background:var(--pale-green);">
+          <p style="font-size:0.72rem;letter-spacing:0.15em;color:var(--gold);margin-bottom:0.5rem;">OEM製造のご相談</p>
+          <p style="font-size:0.82rem;color:var(--text-mid);line-height:1.9;font-family:'Noto Serif JP',serif;font-weight:300;">海洋深層水を使用したオリジナル化粧品の開発・製造についてのご相談は、下記フォームまたはメールにてお気軽にお問い合わせください。小ロットから対応可能です。</p>
+        </div>
+      </div>
+
+      <!-- フォーム -->
+      <div class="reveal reveal-delay-1">
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:var(--deep-green);margin-bottom:1.5rem;">お問い合わせフォーム</h3>
+        <form class="contact-form" id="contact-form">
+          <div>
+            <label for="company">貴社名 <span style="color:var(--gold)">*</span></label>
+            <input type="text" id="company" name="company" placeholder="株式会社〇〇" required>
+          </div>
+          <div>
+            <label for="name">ご担当者名 <span style="color:var(--gold)">*</span></label>
+            <input type="text" id="name" name="name" placeholder="山田 花子" required>
+          </div>
+          <div>
+            <label for="email">メールアドレス <span style="color:var(--gold)">*</span></label>
+            <input type="email" id="email" name="email" placeholder="info@example.com" required>
+          </div>
+          <div>
+            <label for="tel">電話番号</label>
+            <input type="tel" id="tel" name="tel" placeholder="03-XXXX-XXXX">
+          </div>
+          <div>
+            <label for="category">お問い合わせ種別 <span style="color:var(--gold)">*</span></label>
+            <select id="category" name="category" required>
+              <option value="">選択してください</option>
+              <option value="oem">OEM製造について</option>
+              <option value="product">製品について</option>
+              <option value="sample">サンプルのご依頼</option>
+              <option value="store">取り扱い店舗について</option>
+              <option value="other">その他</option>
+            </select>
+          </div>
+          <div>
+            <label for="message">お問い合わせ内容 <span style="color:var(--gold)">*</span></label>
+            <textarea id="message" name="message" placeholder="ご相談内容をご記入ください..." required></textarea>
+          </div>
+          <button type="submit" class="contact-submit">送信する</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div><a href="index.html" class="footer-logo">MUSE</a><p class="footer-desc">深海の水が育む、美しさのチカラ。<br>高知県室戸市室戸岬町1828-3<br>TEL：0887-22-2212</p></div>
+        <div class="footer-col"><h4>BRAND</h4><ul><li><a href="deep-sea-water.html">海洋深層水について</a></li><li><a href="about.html">会社について</a></li><li><a href="sustainability.html">サステナビリティ</a></li></ul></div>
+        <div class="footer-col"><h4>PRODUCTS</h4><ul><li><a href="products.html">スキンケア</a></li><li><a href="products.html">ボディケア</a></li><li><a href="products.html">ヘアケア</a></li><li><a href="news.html">キャンペーン</a></li></ul></div>
+        <div class="footer-col"><h4>SUPPORT</h4><ul><li><a href="contact.html">お問い合わせ</a></li><li><a href="faq.html">よくあるご質問</a></li><li><a href="contact.html">取り扱い店舗</a></li><li><a href="privacy.html">プライバシーポリシー</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><p>© 2026 MUSE CO., LTD. All rights reserved.</p><div class="social-links"><a href="#">INSTAGRAM</a><a href="#">X / TWITTER</a><a href="#">LINE</a></div></div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="会社について | 株式会社ミューズ。高知県室戸岬町に本社・製造工場を構える化粧品OEMメーカー。企業理念・会社概要を掲載。">
+  <title>会社について | MUSE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── 企業理念カード ── */
+    .philosophy-list { list-style: none; display: flex; flex-direction: column; gap: 0; margin-top: 3rem; }
+    .philosophy-item {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 1.5rem;
+      align-items: start;
+      padding: 2rem 0;
+      border-bottom: 1px solid rgba(44,74,62,0.1);
+    }
+    .philosophy-item:first-child { border-top: 1px solid rgba(44,74,62,0.1); }
+    .philosophy-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem; font-weight: 300;
+      color: var(--gold-light); line-height: 1;
+      letter-spacing: 0.05em;
+    }
+    .philosophy-text {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 0.9rem; line-height: 2.1;
+      color: var(--text-mid); font-weight: 300;
+      padding-top: 0.3rem;
+    }
+    /* ── 会社概要テーブル ── */
+    .profile-table { width:100%; border-collapse: collapse; margin-top: 2.5rem; }
+    .profile-table th {
+      width: 160px; padding: 1.4rem 1rem 1.4rem 0;
+      text-align: left; vertical-align: top;
+      font-size: 0.68rem; letter-spacing: 0.22em;
+      color: var(--gold); font-weight: 400;
+      border-bottom: 1px solid rgba(44,74,62,0.1);
+      white-space: nowrap;
+    }
+    .profile-table td {
+      padding: 1.4rem 0; vertical-align: top;
+      font-family: 'Noto Serif JP', serif;
+      font-size: 0.88rem; line-height: 1.95;
+      color: var(--text-mid); font-weight: 300;
+      border-bottom: 1px solid rgba(44,74,62,0.1);
+    }
+    .profile-table tr:last-child th,
+    .profile-table tr:last-child td { border-bottom: none; }
+    .bank-list { display: flex; flex-wrap: wrap; gap: 0.3rem 1.5rem; margin: 0; list-style: none; }
+    .bank-list li { font-size: 0.88rem; color: var(--text-mid); font-family: 'Noto Serif JP', serif; font-weight: 300; }
+    /* ── アクセスカード ── */
+    .office-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem; }
+    .office-card { background: var(--white); border: 1px solid rgba(44,74,62,0.12); padding: 2rem; }
+    .office-card:hover { border-color: var(--gold); }
+    .office-label { font-size: 0.62rem; letter-spacing: 0.35em; color: var(--gold); margin-bottom: 0.8rem; }
+    .office-name { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; color: var(--deep-green); margin-bottom: 1rem; }
+    .office-info { font-family: 'Noto Serif JP', serif; font-size: 0.85rem; line-height: 2; color: var(--text-mid); font-weight: 300; }
+    .office-info a { color: var(--text-mid); text-decoration: none; }
+    @media (max-width: 640px) {
+      .office-grid { grid-template-columns: 1fr; }
+      .philosophy-item { grid-template-columns: 40px 1fr; gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav id="main-nav">
+    <a href="index.html" class="nav-logo">MUSE</a>
+    <ul class="nav-links">
+      <li><a href="deep-sea-water.html">海洋深層水について</a></li>
+      <li><a href="about.html" style="color:var(--gold)">会社について</a></li>
+      <li><a href="products.html">製品・サービス</a></li>
+      <li><a href="sustainability.html">サステナビリティ</a></li>
+      <li><a href="news.html">ニュース</a></li>
+      <li><a href="contact.html">お問い合わせ</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+  </nav>
+  <nav id="mobile-menu" class="nav-mobile-menu">
+    <a href="deep-sea-water.html">海洋深層水について</a><a href="about.html">会社について</a>
+    <a href="products.html">製品・サービス</a><a href="sustainability.html">サステナビリティ</a>
+    <a href="news.html">ニュース</a><a href="contact.html">お問い合わせ</a>
+  </nav>
+
+  <div class="page-hero">
+    <p class="page-hero-eyebrow">ABOUT MUSE</p>
+    <h1 class="page-hero-title">会社について</h1>
+    <p class="page-hero-sub">高知県室戸岬から、世界へ</p>
+    <nav class="breadcrumb"><a href="index.html">HOME</a><span>›</span><span>会社について</span></nav>
+  </div>
+
+  <!-- ========== 会社紹介 ========== -->
+  <section class="about" style="padding:0;">
+    <div class="about-inner" style="padding:5rem 2rem;">
+      <div class="about-lead reveal">
+        <p class="section-eyebrow">COMPANY</p>
+        <h2 class="section-title">日本ではじめて<br>海洋深層水の取水事業を<br>開始した室戸から</h2>
+      </div>
+      <div class="about-body">
+        <div class="about-text reveal reveal-delay-1">
+          <p class="section-body">高知県室戸市は、日本ではじめて海洋深層水の取水事業を開始した地。私たちミューズの本社・製造工場は、その室戸岬町に位置します。工場には、室戸岬沖・<strong>水深約344m</strong>の深海から取水される海洋深層水が、取水ターミナルを通じパイプラインでダイレクトに供給されています。</p>
+          <p class="section-body" style="margin-top:1.5rem;">海洋深層水を用いた化粧品は今日多くの工場で製造されていますが、このような製造体制を持つ工場は<strong>世界的にも稀少</strong>です。安全性・鮮度・コスト面からも高い優位性を誇るこの環境で、貴社オリジナル化粧品のOEMパートナーとして、付加価値の高い製品を開発・製造いたします。</p>
+        </div>
+        <div class="about-features reveal reveal-delay-2">
+          <div class="about-feature"><div class="about-feature-num">344<span>m</span></div><div class="about-feature-label">取水深度</div><p class="about-feature-desc">室戸岬沖の深海から、太陽光の届かない清浄な水を取水</p></div>
+          <div class="about-feature"><div class="about-feature-num">直</div><div class="about-feature-label">パイプライン直供給</div><p class="about-feature-desc">取水ターミナルから工場へダイレクトに供給。鮮度と品質を最大限に保持</p></div>
+          <div class="about-feature"><div class="about-feature-num">世</div><div class="about-feature-label">世界的に稀少な環境</div><p class="about-feature-desc">この製造体制を持つ工場は世界でも数少なく、唯一無二の価値を提供</p></div>
+        </div>
+      </div>
+      <div class="about-oem reveal reveal-delay-3">
+        <div class="about-oem-icon" aria-hidden="true">
+          <svg viewBox="0 0 60 60" fill="none">
+            <circle cx="30" cy="30" r="28" stroke="#C9A96E" stroke-width="0.8"/>
+            <path d="M30 8C30 8 12 20 12 34C12 45 20 52 30 52C40 52 48 45 48 34C48 20 30 8 30 8Z" stroke="#C9A96E" stroke-width="1" fill="none"/>
+            <path d="M30 16C30 16 20 26 20 36C20 43 24 48 30 48" stroke="rgba(201,169,110,0.4)" stroke-width="0.7" fill="none"/>
+          </svg>
+        </div>
+        <div class="about-oem-text">
+          <p class="about-oem-label">OEM PARTNER</p>
+          <p class="about-oem-body">深海の美しい海とつながる、ミューズの化粧品製造体制。貴社オリジナル化粧品のOEMパートナーとして、美しい深海の水を用いた、付加価値の高い製品を開発・製造いたします。</p>
+          <a href="contact.html" class="about-oem-cta">OEMのご相談はこちら →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 企業理念 ========== -->
+  <div style="background:var(--cream);padding:6rem 2rem;">
+    <div style="max-width:860px;margin:0 auto;">
+      <p class="section-eyebrow reveal">PHILOSOPHY</p>
+      <h2 class="section-title reveal reveal-delay-1">企業理念</h2>
+      <ul class="philosophy-list reveal reveal-delay-2">
+        <li class="philosophy-item">
+          <span class="philosophy-num">1</span>
+          <p class="philosophy-text">健康な体と健全な精神を維持し、豊かで美しい製品を提供します。</p>
+        </li>
+        <li class="philosophy-item">
+          <span class="philosophy-num">2</span>
+          <p class="philosophy-text">不変的品質目標には絶対値を、変化する時代のニーズやお客様の要望で絶えず変化する品質には、先見性・独創性・洞察力をもって。この２つの品質が高次元で調和した製品の開発、製造を行います。</p>
+        </li>
+        <li class="philosophy-item">
+          <span class="philosophy-num">3</span>
+          <p class="philosophy-text">原価意識を持って、高い生産性と競争力を保ち、付加価値の高い生産活動を行います。</p>
+        </li>
+        <li class="philosophy-item">
+          <span class="philosophy-num">4</span>
+          <p class="philosophy-text">室戸海洋深層水、及び、化粧品製造に関する情報・技術を活用し、製品の開発・製造作業を協力関連会社と共に進めます。</p>
+        </li>
+        <li class="philosophy-item">
+          <span class="philosophy-num">5</span>
+          <p class="philosophy-text">縦・横の風通しの良い会社組織とし、透明性のある経営・運営を行い、社員が働きやすく、働き甲斐のある職場環境にします。</p>
+        </li>
+        <li class="philosophy-item">
+          <span class="philosophy-num">6</span>
+          <p class="philosophy-text">社員個々が企業の果たす社会的責任を理解し、微力でも地域社会や環境に対して有形無形の還元活動を行います。</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ========== 会社概要 ========== -->
+  <div style="background:var(--white);padding:6rem 2rem;">
+    <div style="max-width:860px;margin:0 auto;">
+      <p class="section-eyebrow reveal">COMPANY PROFILE</p>
+      <h2 class="section-title reveal reveal-delay-1">会社概要</h2>
+
+      <table class="profile-table reveal reveal-delay-2">
+        <tbody>
+          <tr>
+            <th>社名</th>
+            <td>株式会社ミューズ<br><span style="font-size:0.8rem;color:var(--text-light);letter-spacing:0.1em;">MUSE CO., LTD.</span></td>
+          </tr>
+          <tr>
+            <th>本社所在地</th>
+            <td>
+              〒781-7101　高知県室戸市室戸岬町1828-3<br>
+              TEL：<a href="tel:0887222212" style="color:var(--text-mid);text-decoration:none;">0887-22-2212</a>　
+              FAX：0887-22-2270
+            </td>
+          </tr>
+          <tr>
+            <th>東京オフィス</th>
+            <td>
+              〒103-0028　東京都中央区八重洲1-8-17 新槇町ビル6F<br>
+              TEL：<a href="tel:0355421897" style="color:var(--text-mid);text-decoration:none;">03-5542-1897</a>
+            </td>
+          </tr>
+          <tr>
+            <th>事業内容</th>
+            <td>
+              1．化粧品のOEM製造事業<br>
+              2．化粧品の製造販売事業<br>
+              3．海洋深層水の脱塩水（化粧品原料）等の製造販売事業
+            </td>
+          </tr>
+          <tr>
+            <th>設立</th>
+            <td>平成17年12月27日</td>
+          </tr>
+          <tr>
+            <th>資本金</th>
+            <td>16,000,000円</td>
+          </tr>
+          <tr>
+            <th>取引銀行</th>
+            <td>
+              <ul class="bank-list">
+                <li>三井住友銀行</li>
+                <li>日本政策金融公庫</li>
+                <li>四国銀行</li>
+                <li>高知信用金庫</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- オフィスカード -->
+      <div class="office-grid reveal reveal-delay-3" style="margin-top:4rem;">
+        <div class="office-card">
+          <p class="office-label">HEAD OFFICE &amp; FACTORY</p>
+          <h3 class="office-name">本社・製造工場</h3>
+          <p class="office-info">
+            〒781-7101<br>
+            高知県室戸市室戸岬町1828-3<br>
+            TEL：<a href="tel:0887222212">0887-22-2212</a><br>
+            FAX：0887-22-2270
+          </p>
+        </div>
+        <div class="office-card">
+          <p class="office-label">TOKYO OFFICE</p>
+          <h3 class="office-name">東京オフィス</h3>
+          <p class="office-info">
+            〒103-0028<br>
+            東京都中央区八重洲1-8-17<br>
+            新槇町ビル6F<br>
+            TEL：<a href="tel:0355421897">03-5542-1897</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div><a href="index.html" class="footer-logo">MUSE</a><p class="footer-desc">深海の水が育む、美しさのチカラ。<br>高知県室戸市室戸岬町1828-3<br>TEL：0887-22-2212</p></div>
+        <div class="footer-col"><h4>BRAND</h4><ul><li><a href="deep-sea-water.html">海洋深層水について</a></li><li><a href="about.html">会社について</a></li><li><a href="sustainability.html">サステナビリティ</a></li></ul></div>
+        <div class="footer-col"><h4>PRODUCTS</h4><ul><li><a href="products.html">スキンケア</a></li><li><a href="products.html">ボディケア</a></li><li><a href="products.html">ヘアケア</a></li><li><a href="news.html">キャンペーン</a></li></ul></div>
+        <div class="footer-col"><h4>SUPPORT</h4><ul><li><a href="contact.html">お問い合わせ</a></li><li><a href="faq.html">よくあるご質問</a></li><li><a href="contact.html">取り扱い店舗</a></li><li><a href="privacy.html">プライバシーポリシー</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><p>© 2026 MUSE CO., LTD. All rights reserved.</p><div class="social-links"><a href="#">INSTAGRAM</a><a href="#">X / TWITTER</a><a href="#">LINE</a></div></div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

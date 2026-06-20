@@ -161,6 +161,18 @@ nav.scrolled .nav-hamburger span {
   justify-content: center;
 }
 
+.hero-ocean {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.hero-ocean-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
 .hero-bg {
   position: absolute;
   inset: 0;
@@ -197,7 +209,7 @@ nav.scrolled .nav-hamburger span {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Ccircle cx='30' cy='30' r='1' fill='%23C9A96E' opacity='0.08'/%3E%3C/svg%3E") repeat;
+  background: rgba(4, 20, 35, 0.35);
   pointer-events: none;
 }
 
@@ -1223,7 +1235,9 @@ footer {
 /* ========== REDUCED MOTION ========== */
 @media (prefers-reduced-motion: reduce) {
   .ripple,
-  .scroll-line::after {
+  .scroll-line::after,
+  .hero-ocean-svg animate,
+  .hero-ocean-svg animateTransform {
     animation: none;
   }
   .reveal {
@@ -1231,4 +1245,99 @@ footer {
     transform: none;
     transition: none;
   }
+}
+
+/* ========== PAGE HERO (サブページ共通) ========== */
+.page-hero {
+  background: linear-gradient(160deg, #1e3d32 0%, #2C4A3E 50%, #3D6657 100%);
+  padding: 9rem 2rem 5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Ccircle cx='30' cy='30' r='1' fill='%23C9A96E' opacity='0.07'/%3E%3C/svg%3E") repeat;
+  pointer-events: none;
+}
+.page-hero-eyebrow { font-size: 0.68rem; letter-spacing: 0.45em; color: var(--gold); margin-bottom: 1rem; position: relative; }
+.page-hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 5vw, 4rem); font-weight: 300; color: var(--white); letter-spacing: 0.08em; line-height: 1.2; margin-bottom: 1rem; position: relative; }
+.page-hero-sub { font-family: 'Noto Serif JP', serif; font-size: 0.95rem; font-weight: 300; color: rgba(255,255,255,0.6); letter-spacing: 0.2em; position: relative; }
+.breadcrumb { position: relative; display: flex; align-items: center; justify-content: center; gap: 0.5rem; margin-top: 2.5rem; font-size: 0.68rem; letter-spacing: 0.15em; color: rgba(255,255,255,0.4); }
+.breadcrumb a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+.breadcrumb a:hover { color: var(--gold); }
+
+/* ========== INNER PAGE LAYOUT ========== */
+.inner-section { max-width: 900px; margin: 0 auto; padding: 5rem 2rem; }
+.inner-section-wide { max-width: 1100px; margin: 0 auto; padding: 5rem 2rem; }
+
+/* ========== PRODUCTS PAGE ========== */
+.product-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 3rem; }
+.product-detail-card { background: var(--cream); padding: 3rem 2.5rem; position: relative; overflow: hidden; transition: transform 0.4s; }
+.product-detail-card:hover { transform: translateY(-4px); }
+.product-detail-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: var(--gold); transform: scaleX(0); transition: transform 0.4s; }
+.product-detail-card:hover::after { transform: scaleX(1); }
+.pdc-icon { width: 64px; height: 64px; border-radius: 50%; background: var(--pale-green); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; }
+.pdc-icon svg { width: 30px; height: 30px; }
+.pdc-title { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 400; color: var(--deep-green); letter-spacing: 0.08em; margin-bottom: 0.8rem; }
+.pdc-body { font-family: 'Noto Serif JP', serif; font-size: 0.88rem; line-height: 2; color: var(--text-mid); font-weight: 300; }
+.pdc-list { list-style: none; margin-top: 1.2rem; display: flex; flex-direction: column; gap: 0.4rem; }
+.pdc-list li { font-size: 0.8rem; color: var(--text-mid); padding-left: 1rem; position: relative; }
+.pdc-list li::before { content: '—'; position: absolute; left: 0; color: var(--gold); font-size: 0.7rem; }
+
+/* ========== SUSTAINABILITY PAGE ========== */
+.sustain-full-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 3rem; }
+.sustain-initiative { padding: 2.5rem; border: 1px solid rgba(44,74,62,0.12); background: var(--white); transition: border-color 0.3s; }
+.sustain-initiative:hover { border-color: var(--gold); }
+.si-num { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300; color: var(--gold-light); line-height: 1; margin-bottom: 0.5rem; }
+.si-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; color: var(--deep-green); letter-spacing: 0.05em; margin-bottom: 0.8rem; }
+.si-body { font-size: 0.85rem; line-height: 2; color: var(--text-mid); font-weight: 300; font-family: 'Noto Serif JP', serif; }
+.sustain-pledge { background: var(--deep-green); padding: 4rem 3rem; text-align: center; margin-top: 5rem; }
+.sustain-pledge h3 { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; color: var(--white); letter-spacing: 0.1em; margin-bottom: 1rem; }
+.sustain-pledge p { font-family: 'Noto Serif JP', serif; font-size: 0.9rem; color: rgba(255,255,255,0.7); line-height: 2; font-weight: 300; }
+
+/* ========== CONTACT PAGE ========== */
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 3rem; }
+.contact-info h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 300; color: var(--deep-green); margin-bottom: 1.5rem; }
+.contact-info-item { display: flex; flex-direction: column; gap: 0.2rem; padding: 1.2rem 0; border-bottom: 1px solid rgba(44,74,62,0.1); }
+.ci-label { font-size: 0.65rem; letter-spacing: 0.25em; color: var(--gold); }
+.ci-value { font-size: 0.9rem; color: var(--text-dark); letter-spacing: 0.05em; }
+.contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
+.contact-form label { font-size: 0.72rem; letter-spacing: 0.2em; color: var(--text-mid); display: block; margin-bottom: 0.4rem; }
+.contact-form input, .contact-form textarea, .contact-form select { width: 100%; padding: 0.85rem 1rem; border: 1px solid rgba(44,74,62,0.2); background: var(--cream); font-family: 'Noto Sans JP', sans-serif; font-size: 0.88rem; color: var(--text-dark); outline: none; transition: border-color 0.3s; }
+.contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus { border-color: var(--gold); }
+.contact-form textarea { resize: vertical; min-height: 140px; }
+.contact-submit { display: inline-block; padding: 0.9rem 3rem; background: var(--deep-green); color: var(--white); font-size: 0.75rem; letter-spacing: 0.25em; border: none; cursor: pointer; transition: background 0.3s; font-family: 'Noto Sans JP', sans-serif; align-self: flex-start; }
+.contact-submit:hover { background: var(--mid-green); }
+
+/* ========== FAQ PAGE ========== */
+.faq-list { list-style: none; margin-top: 2rem; }
+.faq-item { border-top: 1px solid rgba(44,74,62,0.1); padding: 1.5rem 0; }
+.faq-item:last-child { border-bottom: 1px solid rgba(44,74,62,0.1); }
+.faq-q { display: flex; align-items: flex-start; gap: 1rem; cursor: pointer; background: none; border: none; width: 100%; text-align: left; }
+.faq-q-mark { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 400; color: var(--gold); flex-shrink: 0; line-height: 1.3; }
+.faq-q-text { font-size: 0.92rem; color: var(--text-dark); line-height: 1.7; flex: 1; font-weight: 400; padding-top: 0.1rem; }
+.faq-q-arrow { flex-shrink: 0; font-size: 0.8rem; color: var(--gold); transition: transform 0.3s; margin-top: 0.2rem; }
+.faq-item.open .faq-q-arrow { transform: rotate(180deg); }
+.faq-a { display: none; padding: 1rem 0 0 2.2rem; }
+.faq-item.open .faq-a { display: block; }
+.faq-a-text { font-family: 'Noto Serif JP', serif; font-size: 0.88rem; line-height: 2; color: var(--text-mid); font-weight: 300; }
+
+/* ========== PRIVACY PAGE ========== */
+.privacy-body { max-width: 800px; margin: 0 auto; padding: 5rem 2rem; }
+.privacy-section { margin-bottom: 3rem; }
+.privacy-section h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; color: var(--deep-green); letter-spacing: 0.05em; margin-bottom: 0.8rem; padding-bottom: 0.5rem; border-bottom: 1px solid rgba(44,74,62,0.15); }
+.privacy-section p, .privacy-section li { font-family: 'Noto Serif JP', serif; font-size: 0.88rem; line-height: 2.1; color: var(--text-mid); font-weight: 300; }
+.privacy-section ul { list-style: none; padding-left: 1rem; }
+.privacy-section li { position: relative; padding-left: 1rem; }
+.privacy-section li::before { content: '・'; position: absolute; left: 0; color: var(--gold); }
+
+/* ========== RESPONSIVE additions ========== */
+@media (max-width: 768px) {
+  .product-detail-grid { grid-template-columns: 1fr; }
+  .sustain-full-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .news-full-item { grid-template-columns: 1fr; gap: 0.4rem; }
 }

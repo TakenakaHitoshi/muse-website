@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ニュース | MUSE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav id="main-nav">
+    <a href="index.html" class="nav-logo">MUSE</a>
+    <ul class="nav-links">
+      <li><a href="deep-sea-water.html">海洋深層水について</a></li><li><a href="about.html">会社について</a></li>
+      <li><a href="products.html">製品・サービス</a></li><li><a href="sustainability.html">サステナビリティ</a></li>
+      <li><a href="news.html" style="color:var(--gold)">ニュース</a></li><li><a href="contact.html">お問い合わせ</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+  </nav>
+  <nav id="mobile-menu" class="nav-mobile-menu">
+    <a href="deep-sea-water.html">海洋深層水について</a><a href="about.html">会社について</a>
+    <a href="products.html">製品・サービス</a><a href="sustainability.html">サステナビリティ</a>
+    <a href="news.html">ニュース</a><a href="contact.html">お問い合わせ</a>
+  </nav>
+
+  <div class="page-hero">
+    <p class="page-hero-eyebrow">NEWS &amp; TOPICS</p>
+    <h1 class="page-hero-title">ニュース</h1>
+    <p class="page-hero-sub">最新情報・お知らせ</p>
+    <nav class="breadcrumb"><a href="index.html">HOME</a><span>›</span><span>ニュース</span></nav>
+  </div>
+
+  <div class="inner-section">
+    <!-- カテゴリフィルター -->
+    <div style="display:flex;gap:0.8rem;flex-wrap:wrap;margin-bottom:3rem;" class="reveal">
+      <button onclick="filterNews('all')" id="btn-all" style="padding:0.4rem 1.2rem;border:1px solid var(--deep-green);background:var(--deep-green);color:white;font-size:0.68rem;letter-spacing:0.15em;cursor:pointer;font-family:'Noto Sans JP',sans-serif;">すべて</button>
+      <button onclick="filterNews('新商品')" id="btn-新商品" style="padding:0.4rem 1.2rem;border:1px solid rgba(44,74,62,0.3);background:transparent;color:var(--text-mid);font-size:0.68rem;letter-spacing:0.15em;cursor:pointer;font-family:'Noto Sans JP',sans-serif;">新商品</button>
+      <button onclick="filterNews('キャンペーン')" id="btn-キャンペーン" style="padding:0.4rem 1.2rem;border:1px solid rgba(44,74,62,0.3);background:transparent;color:var(--text-mid);font-size:0.68rem;letter-spacing:0.15em;cursor:pointer;font-family:'Noto Sans JP',sans-serif;">キャンペーン</button>
+      <button onclick="filterNews('サステナビリティ')" id="btn-サステナビリティ" style="padding:0.4rem 1.2rem;border:1px solid rgba(44,74,62,0.3);background:transparent;color:var(--text-mid);font-size:0.68rem;letter-spacing:0.15em;cursor:pointer;font-family:'Noto Sans JP',sans-serif;">サステナビリティ</button>
+      <button onclick="filterNews('お知らせ')" id="btn-お知らせ" style="padding:0.4rem 1.2rem;border:1px solid rgba(44,74,62,0.3);background:transparent;color:var(--text-mid);font-size:0.68rem;letter-spacing:0.15em;cursor:pointer;font-family:'Noto Sans JP',sans-serif;">お知らせ</button>
+    </div>
+
+    <ul class="news-full-list" id="news-list">
+      <li data-cat="新商品"><div class="news-full-item reveal"><span class="news-date">2026.06.01</span><span class="news-tag">新商品</span><span class="news-title-text">夏季限定「MUSE アクアシリーズ」を6月15日より発売開始。海洋深層水を高配合した新処方で、うるおいを長時間キープ。</span></div></li>
+      <li data-cat="キャンペーン"><div class="news-full-item reveal reveal-delay-1"><span class="news-date">2026.05.20</span><span class="news-tag">キャンペーン</span><span class="news-title-text">母の日ギフトセット特別キャンペーン、ご好評につき5月31日まで延長決定。限定パッケージで贈る特別セット。</span></div></li>
+      <li data-cat="サステナビリティ"><div class="news-full-item reveal reveal-delay-2"><span class="news-date">2026.04.08</span><span class="news-tag">サステナビリティ</span><span class="news-title-text">全製品パッケージを100%リサイクル素材へ切り替え完了のお知らせ。2030年脱プラ目標に向けた大きな一歩。</span></div></li>
+      <li data-cat="お知らせ"><div class="news-full-item reveal reveal-delay-3"><span class="news-date">2026.03.15</span><span class="news-tag">お知らせ</span><span class="news-title-text">公式オンラインショップをリニューアルオープン。ポイントプログラムも開始し、よりお得にご購入いただけます。</span></div></li>
+      <li data-cat="新商品"><div class="news-full-item reveal"><span class="news-date">2026.02.20</span><span class="news-tag">新商品</span><span class="news-title-text">春の新作「ディープシー ボタニカルセラム」を発売。室戸の海洋深層水と国産植物エキスの組み合わせで誕生した美容液。</span></div></li>
+      <li data-cat="サステナビリティ"><div class="news-full-item reveal reveal-delay-1"><span class="news-date">2026.01.10</span><span class="news-tag">サステナビリティ</span><span class="news-title-text">高知県の森林保全活動への寄付金総額が累計1,000万円を突破。室戸の豊かな自然を守る取り組みが加速しています。</span></div></li>
+      <li data-cat="お知らせ"><div class="news-full-item reveal reveal-delay-2"><span class="news-date">2025.12.01</span><span class="news-tag">お知らせ</span><span class="news-title-text">年末年始の営業・発送スケジュールについて。2025年12月28日〜2026年1月5日は休業とさせていただきます。</span></div></li>
+      <li data-cat="キャンペーン"><div class="news-full-item reveal reveal-delay-3"><span class="news-date">2025.11.15</span><span class="news-tag">キャンペーン</span><span class="news-title-text">冬の肌荒れ対策キャンペーン実施中。対象のスキンケアセットをご購入でオリジナルポーチをプレゼント。</span></div></li>
+    </ul>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div><a href="index.html" class="footer-logo">MUSE</a><p class="footer-desc">深海の水が育む、美しさのチカラ。<br>高知県室戸市室戸岬町1828-3<br>TEL：0887-22-2212</p></div>
+        <div class="footer-col"><h4>BRAND</h4><ul><li><a href="deep-sea-water.html">海洋深層水について</a></li><li><a href="about.html">会社について</a></li><li><a href="sustainability.html">サステナビリティ</a></li></ul></div>
+        <div class="footer-col"><h4>PRODUCTS</h4><ul><li><a href="products.html">スキンケア</a></li><li><a href="products.html">ボディケア</a></li><li><a href="products.html">ヘアケア</a></li><li><a href="news.html">キャンペーン</a></li></ul></div>
+        <div class="footer-col"><h4>SUPPORT</h4><ul><li><a href="contact.html">お問い合わせ</a></li><li><a href="faq.html">よくあるご質問</a></li><li><a href="contact.html">取り扱い店舗</a></li><li><a href="privacy.html">プライバシーポリシー</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><p>© 2026 MUSE CO., LTD. All rights reserved.</p><div class="social-links"><a href="#">INSTAGRAM</a><a href="#">X / TWITTER</a><a href="#">LINE</a></div></div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+  <script>
+    function filterNews(cat) {
+      const items = document.querySelectorAll('#news-list li');
+      items.forEach(li => { li.style.display = (cat === 'all' || li.dataset.cat === cat) ? '' : 'none'; });
+      document.querySelectorAll('[id^="btn-"]').forEach(b => {
+        b.style.background = 'transparent'; b.style.color = 'var(--text-mid)';
+        b.style.borderColor = 'rgba(44,74,62,0.3)';
+      });
+      const active = document.getElementById('btn-' + cat);
+      if (active) { active.style.background = 'var(--deep-green)'; active.style.color = 'white'; active.style.borderColor = 'var(--deep-green)'; }
+    }
+  </script>
+</body>
+</html>
